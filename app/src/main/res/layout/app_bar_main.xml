@@ -7,6 +7,7 @@
     tools:context="com.app.hamang.tektonproject.MainActivity">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
@@ -17,20 +18,25 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Dogtionary"
-                android:textStyle="bold"
                 android:textColor="#8B4513"
-                android:textSize="25sp"/>
+                android:textSize="25sp"
+                android:textStyle="bold" />
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
     <include
         layout="@layout/content_main"
-        layout_weight="1" />
+        android:layout_width="match_parent"
+        android:layout_height="626dp"
+        android:layout_weight="1"
+        app:layout_anchor="@+id/appBarLayout"
+        app:layout_anchorGravity="top|center" />
 
 </android.support.design.widget.CoordinatorLayout>
