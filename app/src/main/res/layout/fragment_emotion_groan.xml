@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFDDA7">
+
+    <Button
+        android:id="@+id/groan_button1"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="80dp"
+        android:text="끙~ 끙~ 운다" />
+
+    <Button
+        android:id="@+id/groan_button2"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/groan_button1"
+        android:layout_toEndOf="@+id/groan_button1"
+        android:layout_toRightOf="@+id/groan_button1"
+        android:text="하울링을 한다" />
+
+    <Button
+        android:id="@+id/groan_button3"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/groan_button1"
+        android:layout_alignStart="@+id/groan_button1"
+        android:layout_below="@+id/groan_button1"
+        android:layout_marginTop="10dp"
+       android:text="끙끙거리고 아우~ 운다"/>
+
+    <Button
+        android:id="@+id/groan_button4"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/groan_button2"
+        android:layout_alignStart="@+id/groan_button2"
+        android:layout_below="@+id/groan_button2"
+        android:layout_marginTop="10dp"
+        android:text="껭 ! 소리를 낸다"/>
+
+    <Button
+        android:id="@+id/groan_button5"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/groan_button3"
+        android:layout_alignStart="@+id/groan_button3"
+        android:layout_below="@+id/groan_button3"
+        android:layout_marginTop="10dp"
+        android:text="으르렁 ~ 소리를 낸다" />
+
+    <Button
+        android:id="@+id/groan_button6"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/groan_button4"
+        android:layout_alignStart="@+id/groan_button4"
+        android:layout_below="@+id/groan_button4"
+        android:layout_marginTop="10dp"
+        android:text="워우우~ 워우우~ 운다"/>
+
+</RelativeLayout>

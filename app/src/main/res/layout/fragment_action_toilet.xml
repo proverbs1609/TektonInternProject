@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFDDA7">
+
+    <Button
+        android:id="@+id/toilet_button1"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="80dp"
+        android:text="아무데나 배설한다" />
+
+    <Button
+        android:id="@+id/toilet_button2"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/toilet_button1"
+        android:layout_toEndOf="@+id/toilet_button1"
+        android:layout_toRightOf="@+id/toilet_button1"
+        android:text="실내에서는 배설을 참는다"/>
+
+    <Button
+        android:id="@+id/toilet_button3"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignEnd="@+id/toilet_button2"
+        android:layout_alignRight="@+id/toilet_button2"
+        android:layout_below="@+id/toilet_button1"
+        android:layout_marginEnd="74dp"
+        android:layout_marginRight="74dp"
+        android:layout_marginTop="11dp"
+        android:text="소량의 소변을 여기저기 본다" />
+
+</RelativeLayout>
