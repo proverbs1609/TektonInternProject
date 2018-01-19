@@ -19,6 +19,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode" />
+
+        <activity android:name=".EmotionActivity.EmotionMypage" />
+        <activity
+            android:name=".ActionActivity.ActionMypage"
+            android:label="@string/title_activity_action"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SpeciesMypage"
+            android:label="@string/title_activity_species_mypage"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

@@ -1,18 +1,20 @@
 package com.app.hamang.tektonproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.app.hamang.tektonproject.ActionActivity.ActionMypage;
+import com.app.hamang.tektonproject.EmotionActivity.EmotionMypage;
 
+public class MainActivity extends AppCompatActivity {
+    private MypageMain mCustomDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,8 +81,42 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case android.R.id.home: // 마이 페이지 버튼 반응
                 Toast.makeText(getApplicationContext(), "마이페이지", Toast.LENGTH_SHORT).show();
+                mCustomDialog = new MypageMain(this,
+                        "[ 나의 댕댕이 ]",
+                        "[ 나의 댕댕이 ]",
+                        saveListener, closeListener, menu1Listener, menu2Listener, menu3Listener); // 오른쪽 버튼 이벤트
+                mCustomDialog.show();
                 return true;
         }
         return super.onOptionsItemSelected(item);
     }
+    // 커스텀 다이얼로그 내 버튼 생성 및 등록
+    private View.OnClickListener saveListener = new View.OnClickListener() {
+        public void onClick(View v) {
+            Toast.makeText(getApplicationContext(), "등록",
+                    Toast.LENGTH_SHORT).show();
+        }
+    };
+    private View.OnClickListener closeListener = new View.OnClickListener() {
+        public void onClick(View v) {
+            Toast.makeText(getApplicationContext(), "닫기",
+                    Toast.LENGTH_SHORT).show();
+            mCustomDialog.dismiss();
+        }
+    };
+    private View.OnClickListener menu1Listener = new View.OnClickListener() {
+        public void onClick(View v) {
+            startActivity(new Intent(getApplicationContext(),EmotionMypage.class)); // 페이지 이동
+        }
+    };
+    private View.OnClickListener menu2Listener = new View.OnClickListener() {
+        public void onClick(View v) {
+            startActivity(new Intent(getApplicationContext(), ActionMypage.class)); // 문제 행동 페이지 이동
+        }
+    };
+    private View.OnClickListener menu3Listener = new View.OnClickListener() {
+        public void onClick(View v) {
+            startActivity(new Intent(getApplicationContext(), SpeciesMypage.class)); // 종별 특성 페이지 이동과 특수값 전달 해야하는데????
+        }
+    };
 }
