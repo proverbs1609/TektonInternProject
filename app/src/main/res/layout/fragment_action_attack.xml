@@ -14,7 +14,8 @@
         android:layout_marginLeft="30dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="80dp"
-        android:text="반려인을 공격한다"/>
+        android:onClick="onButtonClick"
+        android:text="반려인을 공격한다" />
 
     <Button
         android:id="@+id/attack_button2"
@@ -23,7 +24,8 @@
         android:layout_alignTop="@+id/attack_button1"
         android:layout_toEndOf="@+id/attack_button1"
         android:layout_toRightOf="@+id/attack_button1"
-        android:text="가족 외에 공격성을 보인다"/>
+        android:onClick="onButtonClick"
+        android:text="가족 외에 공격성을 보인다" />
 
     <Button
         android:id="@+id/attack_button3"
@@ -33,7 +35,8 @@
         android:layout_alignStart="@+id/attack_button1"
         android:layout_below="@+id/attack_button1"
         android:layout_marginTop="10dp"
-        android:text="밥을먹을때 공격성을 보인다"/>
+        android:onClick="onButtonClick"
+        android:text="밥을먹을때 공격성을 보인다" />
 
     <Button
         android:id="@+id/attack_button4"
@@ -43,7 +46,8 @@
         android:layout_alignStart="@+id/attack_button2"
         android:layout_below="@+id/attack_button2"
         android:layout_marginTop="10dp"
-        android:text="입에 문것을 뺏을 때 공격성을 보인다"/>
+        android:onClick="onButtonClick"
+        android:text="입에 문것을 뺏을 때 공격성을 보인다" />
 
     <Button
         android:id="@+id/attack_button5"
@@ -55,6 +59,7 @@
         android:layout_marginLeft="75dp"
         android:layout_marginStart="75dp"
         android:layout_marginTop="11dp"
+        android:onClick="onButtonClick"
         android:text="다른 개와 공격적으로 싸운다" />
 
 </RelativeLayout>

@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "마이페이지", Toast.LENGTH_SHORT).show();
                 mCustomDialog = new MypageMain(this,
                         "[ 나의 댕댕이 ]",
-                        "[ 나의 댕댕이 ]",
+                        "[ 강아지 이름 변화 ]",
                         saveListener, closeListener, menu1Listener, menu2Listener, menu3Listener); // 오른쪽 버튼 이벤트
                 mCustomDialog.show();
                 return true;
@@ -93,20 +93,18 @@ public class MainActivity extends AppCompatActivity {
     // 커스텀 다이얼로그 내 버튼 생성 및 등록
     private View.OnClickListener saveListener = new View.OnClickListener() {
         public void onClick(View v) {
-            Toast.makeText(getApplicationContext(), "등록",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "등록", Toast.LENGTH_SHORT).show();
         }
     };
     private View.OnClickListener closeListener = new View.OnClickListener() {
         public void onClick(View v) {
-            Toast.makeText(getApplicationContext(), "닫기",
-                    Toast.LENGTH_SHORT).show();
+            //닫기
             mCustomDialog.dismiss();
         }
     };
     private View.OnClickListener menu1Listener = new View.OnClickListener() {
         public void onClick(View v) {
-            startActivity(new Intent(getApplicationContext(),EmotionMypage.class)); // 페이지 이동
+            startActivity(new Intent(getApplicationContext(),EmotionMypage.class)); // 감정 분석 페이지 이동
         }
     };
     private View.OnClickListener menu2Listener = new View.OnClickListener() {
@@ -116,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
     };
     private View.OnClickListener menu3Listener = new View.OnClickListener() {
         public void onClick(View v) {
-            startActivity(new Intent(getApplicationContext(), SpeciesMypage.class)); // 종별 특성 페이지 이동과 특수값 전달 해야하는데????
+            startActivity(new Intent(getApplicationContext(), SpeciesMypage.class)); // 종별 특성 페이지 이동과 특수값 전달 해야하는데 데이터베이스를 활용한 문제해결을 해야함.
         }
     };
 }

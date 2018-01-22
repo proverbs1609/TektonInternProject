@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_dogtionary"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_dogtionary_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -25,16 +25,7 @@
             android:value="barcode" />
 
         <activity android:name=".EmotionActivity.EmotionMypage" />
-        <activity
-            android:name=".ActionActivity.ActionMypage"
-            android:label="@string/title_activity_action"
-            android:theme="@style/AppTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ActionActivity.ActionMypage"/>
         <activity
             android:name=".SpeciesMypage"
             android:label="@string/title_activity_species_mypage"

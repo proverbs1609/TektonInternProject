@@ -14,7 +14,8 @@
         android:layout_marginLeft="30dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="80dp"
-        android:text="멍 !"/>
+        android:onClick="onButtonClick"
+        android:text="멍 !" />
 
     <Button
         android:id="@+id/bark_button2"
@@ -23,7 +24,8 @@
         android:layout_alignTop="@+id/bark_button1"
         android:layout_toEndOf="@+id/bark_button1"
         android:layout_toRightOf="@+id/bark_button1"
-        android:text="멍 멍 멍 멍 멍 !"/>
+        android:onClick="onButtonClick"
+        android:text="멍 멍 멍 멍 멍 !" />
 
     <Button
         android:id="@+id/bark_button3"
@@ -33,7 +35,8 @@
         android:layout_alignStart="@+id/bark_button1"
         android:layout_below="@+id/bark_button1"
         android:layout_marginTop="10dp"
-        android:text="아이를 보면 짖는다"/>
+        android:onClick="onButtonClick"
+        android:text="아이를 보면 짖는다" />
 
     <Button
         android:id="@+id/bark_button4"
@@ -43,8 +46,9 @@
         android:layout_alignStart="@+id/bark_button2"
         android:layout_below="@+id/bark_button2"
         android:layout_marginTop="10dp"
+        android:onClick="onButtonClick"
         android:text="반려인이 귀가하면 짖는다"
-        android:textSize="10dp"/>
+        android:textSize="10dp" />
 
     <Button
         android:id="@+id/bark_button5"
@@ -54,7 +58,8 @@
         android:layout_alignStart="@+id/bark_button3"
         android:layout_below="@+id/bark_button3"
         android:layout_marginTop="10dp"
-        android:text="통화 중에 짖는다"/>
+        android:onClick="onButtonClick"
+        android:text="통화 중에 짖는다" />
 
     <Button
         android:id="@+id/bark_button6"
@@ -64,7 +69,8 @@
         android:layout_alignStart="@+id/bark_button4"
         android:layout_below="@+id/bark_button4"
         android:layout_marginTop="10dp"
-        android:text="혼자일 때 짖는다"/>
+        android:onClick="onButtonClick"
+        android:text="혼자일 때 짖는다" />
 
     <Button
         android:id="@+id/bark_button7"
@@ -74,7 +80,8 @@
         android:layout_alignStart="@+id/bark_button5"
         android:layout_below="@+id/bark_button5"
         android:layout_marginTop="10dp"
-        android:text="쫒아가며 짖는다"/>
+        android:onClick="onButtonClick"
+        android:text="쫒아가며 짖는다" />
 
     <Button
         android:id="@+id/bark_button8"
@@ -84,7 +91,8 @@
         android:layout_alignStart="@+id/bark_button6"
         android:layout_below="@+id/bark_button6"
         android:layout_marginTop="10dp"
-        android:text="새벽에 짖는다"/>
+        android:onClick="onButtonClick"
+        android:text="새벽에 짖는다" />
 
     <Button
         android:id="@+id/bark_button9"
@@ -96,6 +104,7 @@
         android:layout_marginEnd="74dp"
         android:layout_marginRight="74dp"
         android:layout_marginTop="11dp"
+        android:onClick="onButtonClick"
         android:text="멍멍! 짖는 원인을 모른다"
         android:textSize="10dp" />
 </RelativeLayout>

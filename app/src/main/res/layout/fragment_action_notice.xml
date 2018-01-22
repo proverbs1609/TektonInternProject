@@ -14,6 +14,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="80dp"
+        android:onClick="onButtonClick"
         android:text="충분한 산책" />
 
     <Button
@@ -23,7 +24,8 @@
         android:layout_alignTop="@+id/notice_button1"
         android:layout_toEndOf="@+id/notice_button1"
         android:layout_toRightOf="@+id/notice_button1"
-        android:text="은신처 마련"/>
+        android:onClick="onButtonClick"
+        android:text="은신처 마련" />
 
     <Button
         android:id="@+id/notice_button3"
@@ -33,6 +35,7 @@
         android:layout_alignStart="@+id/notice_button1"
         android:layout_below="@+id/notice_button1"
         android:layout_marginTop="10dp"
+        android:onClick="onButtonClick"
         android:text="질병이 원인인지 파악하기" />
 
     <Button
@@ -43,6 +46,7 @@
         android:layout_alignStart="@+id/notice_button2"
         android:layout_below="@+id/notice_button2"
         android:layout_marginTop="10dp"
+        android:onClick="onButtonClick"
         android:text="의사소통" />
 
     <Button
@@ -53,6 +57,7 @@
         android:layout_alignStart="@+id/notice_button3"
         android:layout_below="@+id/notice_button3"
         android:layout_marginTop="10dp"
+        android:onClick="onButtonClick"
         android:text="일관적 기준" />
 
     <Button
@@ -63,6 +68,7 @@
         android:layout_alignStart="@+id/notice_button4"
         android:layout_below="@+id/notice_button4"
         android:layout_marginTop="10dp"
+        android:onClick="onButtonClick"
         android:text="원인 찾기" />
 
 </RelativeLayout>

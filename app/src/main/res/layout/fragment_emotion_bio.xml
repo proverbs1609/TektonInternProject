@@ -14,7 +14,8 @@
         android:layout_marginLeft="30dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="80dp"
-        android:text="얼음처럼 굳음"/>
+        android:onClick="onButtonClick"
+        android:text="얼음처럼 굳음" />
 
     <Button
         android:id="@+id/bio_button2"
@@ -23,7 +24,8 @@
         android:layout_alignTop="@+id/bio_button1"
         android:layout_toEndOf="@+id/bio_button1"
         android:layout_toRightOf="@+id/bio_button1"
-        android:text="덜덜 떤다"/>
+        android:onClick="onButtonClick"
+        android:text="덜덜 떤다" />
 
     <Button
         android:id="@+id/bio_button3"
@@ -33,7 +35,8 @@
         android:layout_alignStart="@+id/bio_button1"
         android:layout_below="@+id/bio_button1"
         android:layout_marginTop="10dp"
-        android:text="털을 곤두세움"/>
+        android:onClick="onButtonClick"
+        android:text="털을 곤두세움" />
 
     <Button
         android:id="@+id/bio_button4"
@@ -43,6 +46,7 @@
         android:layout_alignStart="@+id/bio_button2"
         android:layout_below="@+id/bio_button2"
         android:layout_marginTop="10dp"
+        android:onClick="onButtonClick"
         android:text="호흡이 빨라진다" />
 
     <Button
@@ -53,7 +57,8 @@
         android:layout_alignStart="@+id/bio_button3"
         android:layout_below="@+id/bio_button3"
         android:layout_marginTop="10dp"
-        android:text="하품을 한다"/>
+        android:onClick="onButtonClick"
+        android:text="하품을 한다" />
 
     <Button
         android:id="@+id/bio_button6"
@@ -63,6 +68,7 @@
         android:layout_alignStart="@+id/bio_button4"
         android:layout_below="@+id/bio_button4"
         android:layout_marginTop="10dp"
+        android:onClick="onButtonClick"
         android:text="땀을 흘린다" />
 
     <Button
@@ -73,7 +79,8 @@
         android:layout_alignStart="@+id/bio_button5"
         android:layout_below="@+id/bio_button5"
         android:layout_marginTop="10dp"
-        android:text="침을 흘린다"/>
+        android:onClick="onButtonClick"
+        android:text="침을 흘린다" />
 
     <Button
         android:id="@+id/bio_button8"
@@ -83,6 +90,7 @@
         android:layout_alignStart="@+id/bio_button6"
         android:layout_below="@+id/bio_button6"
         android:layout_marginTop="10dp"
+        android:onClick="onButtonClick"
         android:text="비듬이 날린다" />
 
     <Button
@@ -95,6 +103,7 @@
         android:layout_marginLeft="75dp"
         android:layout_marginStart="75dp"
         android:layout_marginTop="11dp"
+        android:onClick="onButtonClick"
         android:text="털이 날린다" />
 
 </RelativeLayout>
