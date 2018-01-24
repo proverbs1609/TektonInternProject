@@ -77,10 +77,9 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         switch (item.getItemId()) {
             case R.id.action_settings: // info 버튼 반응
-                Toast.makeText(getApplicationContext(), "환경설정 버튼 클릭됨", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(),InfoActivity.class));
                 return true;
             case android.R.id.home: // 마이 페이지 버튼 반응
-                Toast.makeText(getApplicationContext(), "마이페이지", Toast.LENGTH_SHORT).show();
                 mCustomDialog = new MypageMain(this,
                         "[ 나의 댕댕이 ]",
                         "[ 강아지 이름 변화 ]",
