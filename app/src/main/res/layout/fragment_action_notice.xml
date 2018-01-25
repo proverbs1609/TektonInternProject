@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFDDA7">
+
+    <Button
+        android:id="@+id/notice_button1"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="80dp"
+        android:onClick="onButtonClick"
+        android:text="욕구가 충족되는지 확인하기 - 충분한 산책" />
+
+    <Button
+        android:id="@+id/notice_button2"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/notice_button1"
+        android:layout_toEndOf="@+id/notice_button1"
+        android:layout_toRightOf="@+id/notice_button1"
+        android:onClick="onButtonClick"
+        android:text="욕구가 충족되는지 확인하기 - 은신처 마련" />
+
+    <Button
+        android:id="@+id/notice_button3"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/notice_button1"
+        android:layout_alignStart="@+id/notice_button1"
+        android:layout_below="@+id/notice_button1"
+        android:layout_marginTop="10dp"
+        android:onClick="onButtonClick"
+        android:text="질병이 원인인지 파악하기" />
+
+    <Button
+        android:id="@+id/notice_button4"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/notice_button2"
+        android:layout_alignStart="@+id/notice_button2"
+        android:layout_below="@+id/notice_button2"
+        android:layout_marginTop="10dp"
+        android:onClick="onButtonClick"
+        android:text="의사소통" />
+
+    <Button
+        android:id="@+id/notice_button5"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/notice_button3"
+        android:layout_alignStart="@+id/notice_button3"
+        android:layout_below="@+id/notice_button3"
+        android:layout_marginTop="10dp"
+        android:onClick="onButtonClick"
+        android:text="일관적 기준" />
+
+    <Button
+        android:id="@+id/notice_button6"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/notice_button4"
+        android:layout_alignStart="@+id/notice_button4"
+        android:layout_below="@+id/notice_button4"
+        android:layout_marginTop="10dp"
+        android:onClick="onButtonClick"
+        android:text="원인 찾기" />
+
+</RelativeLayout>
