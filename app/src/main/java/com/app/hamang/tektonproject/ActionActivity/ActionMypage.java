@@ -423,7 +423,6 @@ public class ActionMypage extends AppCompatActivity {
         }
         @Override
         public int getCount() {
-            // Show 5 total pages.
             return 5;
         }
     }

@@ -1,18 +1,25 @@
 package com.app.hamang.tektonproject;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.nhn.android.naverlogin.OAuthLogin;
 import com.nhn.android.naverlogin.OAuthLoginHandler;
 import com.nhn.android.naverlogin.ui.view.OAuthLoginButton;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class InfoActivity extends AppCompatActivity {
+    // 공지사항
+    private ListView noticeListView;
+    private NoticeListAdapter adapter;
+    private List<NoticeInfo> noticeInfoList;
     OAuthLogin mOAuthLoginModule;
     OAuthLoginButton mauthLoginButton;
     Context mContext;
@@ -27,6 +34,20 @@ public class InfoActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(null);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        noticeListView = (ListView) findViewById(R.id.noticeListView);
+        noticeInfoList = new ArrayList<NoticeInfo>();
+        noticeInfoList.add(new NoticeInfo("공지사항입니다.", "예찬","2018-2-24"));
+        noticeInfoList.add(new NoticeInfo("공지사항입니다.", "예찬","2018-2-24"));
+        noticeInfoList.add(new NoticeInfo("공지사항입니다.", "예찬","2018-2-24"));
+        noticeInfoList.add(new NoticeInfo("공지사항입니다.", "예찬","2018-2-24"));
+        noticeInfoList.add(new NoticeInfo("공지사항입니다.", "예찬","2018-2-24"));
+        noticeInfoList.add(new NoticeInfo("공지사항입니다.", "예찬","2018-2-24"));
+        noticeInfoList.add(new NoticeInfo("공지사항입니다.", "예찬","2018-2-24"));
+        noticeInfoList.add(new NoticeInfo("공지사항입니다.", "예찬","2018-2-24"));
+        adapter = new NoticeListAdapter(getApplicationContext(), noticeInfoList);
+        noticeListView.setAdapter(adapter);
+
         mauthLoginButton = (OAuthLoginButton) findViewById(R.id.buttonOAuthLoginImg);
         mOAuthLoginModule = OAuthLogin.getInstance();
         mOAuthLoginModule.init(
@@ -39,6 +60,7 @@ public class InfoActivity extends AppCompatActivity {
 
         );
     }
+
     private OAuthLoginHandler mOAuthLoginHandler = new OAuthLoginHandler() {
         @Override
         public void run(boolean success) {
@@ -55,6 +77,7 @@ public class InfoActivity extends AppCompatActivity {
             }
         }
     };
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

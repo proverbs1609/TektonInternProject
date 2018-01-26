@@ -18,12 +18,15 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="#B6D0C9"
+
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:drawableEnd="@drawable/ic_menu_info"
+                android:drawableRight="@drawable/ic_menu_info"
                 android:text="Information"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
@@ -65,7 +68,18 @@
             android:layout_column="0"
             android:layout_row="1"
             android:background="#CFDEE7"
-            android:orientation="vertical"></LinearLayout>
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/noticeListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="#C2DFEA"
+                android:dividerHeight="10dp"
+                android:divider="#CFDEE7">
+            </ListView>
+        </LinearLayout>
     </GridLayout>
 
     <GridLayout
