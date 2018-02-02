@@ -185,6 +185,7 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener menu3Listener = new View.OnClickListener() {
         public void onClick(View v) {
             startActivity(new Intent(getApplicationContext(), SpeciesMypage.class)); // 종별 특성 페이지 이동과 특수값 전달 해야하는데 데이터베이스를 활용한 문제해결을 해야함.
+            // 페이지 이동하면서 인트값 넘겨주기
         }
     };
     private void location() {
@@ -194,6 +195,4 @@ public class MainActivity extends AppCompatActivity {
         intent.addCategory(Intent.CATEGORY_DEFAULT);
         startActivity(intent);
     }
-
-
 }

@@ -29,4 +29,5 @@ dependencies {
     compile files('libs/3rdparty_login_library_android_4.1.4.jar')
     compile 'com.google.zxing:core:3.2.1'
     compile 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
+
 }

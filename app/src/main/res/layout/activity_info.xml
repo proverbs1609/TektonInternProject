@@ -35,10 +35,10 @@
     </android.support.design.widget.AppBarLayout>
 
     <GridLayout
-        android:id="@+id/gridLayout"
+        android:id="@+id/info_layout"
         android:layout_width="370dp"
-        android:layout_height="270dp"
-        android:layout_marginBottom="224dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
@@ -52,19 +52,20 @@
             android:layout_height="40dp"
             android:gravity="center_vertical"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="공지 사항"
+                android:textColor="#8C95AA"
                 android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="#8C95AA" />
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="350dp"
             android:layout_column="0"
             android:layout_row="1"
             android:background="#CFDEE7"
@@ -76,53 +77,9 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:background="#C2DFEA"
-                android:dividerHeight="10dp"
-                android:divider="#CFDEE7">
-            </ListView>
-        </LinearLayout>
-    </GridLayout>
+                android:divider="#CFDEE7"
+                android:dividerHeight="10dp" />
 
-    <GridLayout
-        android:layout_width="370dp"
-        android:layout_height="210dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="계정 관리"
-                android:textColor="#8C95AA"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="170dp"
-            android:layout_column="0"
-            android:layout_row="1"
-            android:background="#CFDEE7"
-            android:orientation="vertical"
-            android:gravity="center_vertical">
-            <com.nhn.android.naverlogin.ui.view.OAuthLoginButton
-                android:layout_gravity="center"
-                android:id="@+id/buttonOAuthLoginImg"
-                android:layout_width="250dp"
-                android:layout_height="50dp" />
         </LinearLayout>
     </GridLayout>
 
