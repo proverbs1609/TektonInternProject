@@ -1,18 +1,24 @@
 package com.app.hamang.tektonproject;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,14 +29,21 @@ import com.app.hamang.tektonproject.PlayActivity.PlayMain;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+    public static DogList cumtomdialog;
     private final long FINISH_INTERVAL_TIME = 2000; // 두번 클릭 종료를 위한 시간
     private long   backPressedTime = 0;
     private MypageMain mCustomDialog;
-    TextView text, text2, text3;
-    String str = "";
-    String str1 = "";//빈 문자열 String 객체
-    String str2 = "";
+    private Activity activity;
+    public static ArrayList<DogItem> animalList=new ArrayList<>();
+    public static DogListAdapter listviewadapter ;
+    int dogImage ;
+    String dogName ;
+    String dogGender ;
+    String dogSpe ;
+    String dogSpeNum ;
     String QRvalue;
     Intent dogcommunity = new Intent(Intent.ACTION_VIEW, Uri.parse("http://m.cafe.naver.com/dogpalza.cafe")); // 네이버 카페 연동 선언
     Intent doghospital = new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.map.naver.com/search2/search.nhn?query=%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&sm=hty"));
@@ -45,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final Activity activity = this;
+        activity = this;
         LayoutInflater inflater1=getLayoutInflater();
         final View view= inflater1.inflate(R.layout.mypage_main, null);;
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -98,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
                     saveListener, closeListener,
                     menu1Listener, menu2Listener, menu3Listener); // 오른쪽 버튼 이벤트
             mCustomDialog.show();
+            dogImage = ran[Integer.parseInt(msg)] ;
+            dogSpe = dogname[Integer.parseInt(msg)] ;
         }
     }
 
@@ -158,10 +173,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),InfoActivity.class));
                 return true;
             case android.R.id.home: // 마이 페이지 버튼 반응
-                mCustomDialog = new MypageMain(this,
+                /*mCustomDialog = new MypageMain(this,
                         "[ 나의 댕댕이 ]", "", 0, saveListener,
                     closeListener, menu1Listener, menu2Listener, menu3Listener); // 오른쪽 버튼 이벤트
-                mCustomDialog.show();
+                mCustomDialog.show();*/
+                cumtomdialog = new DogList(activity, "[댕댕이 list]", listviewadapter, mClickCloseListener);
+                cumtomdialog.show();
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -170,6 +187,38 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener saveListener = new View.OnClickListener() {
         public void onClick(View v) {
             Toast.makeText(getApplicationContext(), "등록", Toast.LENGTH_SHORT).show();
+            LayoutInflater inflater = getLayoutInflater();
+            final View dialogView = inflater.inflate(R.layout.signup_layout, null);
+            final AlertDialog.Builder buider = new AlertDialog.Builder(MainActivity.this);
+            buider.setTitle("[댕댕이]");
+            buider.setIcon(android.R.drawable.ic_menu_add);
+            buider.setView(dialogView);
+            buider.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // TODO Auto-generated method stub
+                    EditText edit_name = (EditText) dialogView.findViewById(R.id.dialog_edit);
+                    RadioGroup rg = (RadioGroup) dialogView.findViewById(R.id.dialog_rg);
+                    //edit_name.setHint(editName);
+                    String name = edit_name.getText().toString();
+                    int checkedId = rg.getCheckedRadioButtonId();
+                    RadioButton rb = (RadioButton) rg.findViewById(checkedId);
+                    String gender = rb.getText().toString();
+                    dogName = name ;
+                    dogGender = gender ;
+                    signup(dogName, dogImage) ;
+                }
+            });
+            buider.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // TODO Auto-generated method stub
+                    Toast.makeText(MainActivity.this, "취소", Toast.LENGTH_SHORT).show();
+                }
+            });
+            AlertDialog dialog=buider.create();
+            dialog.setCanceledOnTouchOutside(false);//없어지지 않도록 설정
+            dialog.show();
         }
     };
     private View.OnClickListener closeListener = new View.OnClickListener() {
@@ -202,4 +251,14 @@ public class MainActivity extends AppCompatActivity {
         intent.addCategory(Intent.CATEGORY_DEFAULT);
         startActivity(intent);
     }
+    public void signup(String nameDog, int imageDog){
+        animalList.add(new DogItem(nameDog,imageDog, dogname[Integer.parseInt(QRvalue)],QRvalue )) ;
+        listviewadapter = new DogListAdapter(this, R.layout.dog_list_layout_row, animalList );
+    }
+    Button.OnClickListener mClickCloseListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            cumtomdialog.dismiss();
+        }
+    };
 }
