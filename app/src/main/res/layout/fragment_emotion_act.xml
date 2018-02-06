@@ -16,6 +16,9 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="80dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="배를 보인다" />
 
     <Button
@@ -26,6 +29,9 @@
         android:layout_toEndOf="@+id/act_button1"
         android:layout_toRightOf="@+id/act_button1"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="기지개를 켠다" />
 
     <Button
@@ -37,6 +43,9 @@
         android:layout_below="@+id/act_button1"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="엉덩이를 바닥에 끈다" />
 
     <Button
@@ -48,8 +57,10 @@
         android:layout_below="@+id/act_button2"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
-        android:text="앞발로 긁고 위아래로 움직인다"
-        android:textSize="10dp" />
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:text="@string/str_act_button4"
+        android:textSize="12dp" />
 
     <Button
         android:id="@+id/act_button5"
@@ -60,6 +71,9 @@
         android:layout_below="@+id/act_button3"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="고개를 갸우뚱 한다" />
 
     <Button
@@ -71,6 +85,9 @@
         android:layout_below="@+id/act_button4"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="등을 보인다" />
 
     <Button
@@ -81,7 +98,10 @@
         android:layout_alignStart="@+id/act_button5"
         android:layout_below="@+id/act_button5"
         android:layout_marginTop="10dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
         android:onClick="onButtonClick"
+        android:textSize="12dp"
         android:text="꼬리를 친다" />
 
     <Button
@@ -93,6 +113,9 @@
         android:layout_below="@+id/act_button6"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="몸을 부르르 떤다" />
 
 </RelativeLayout>

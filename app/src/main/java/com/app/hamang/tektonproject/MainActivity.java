@@ -17,7 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.hamang.tektonproject.ActionActivity.ActionMypage;
+import com.app.hamang.tektonproject.EducationActivity.EducationMain;
 import com.app.hamang.tektonproject.EmotionActivity.EmotionMypage;
+import com.app.hamang.tektonproject.PlayActivity.PlayMain;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     String str = "";
     String str1 = "";//빈 문자열 String 객체
     String str2 = "";
+    String QRvalue;
     Intent dogcommunity = new Intent(Intent.ACTION_VIEW, Uri.parse("http://m.cafe.naver.com/dogpalza.cafe")); // 네이버 카페 연동 선언
     Intent doghospital = new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.map.naver.com/search2/search.nhn?query=%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&sm=hty"));
     Intent dogshop = new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.map.naver.com/search2/search.nhn?query=%EC%95%A0%EA%B2%AC%EC%83%B5&sm=hty"));
@@ -75,7 +78,9 @@ public class MainActivity extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (result != null) {
             if (result.getContents() != null) {
-                scanResult(result.getContents());
+                // 값을 넘겨주기 위해 저장.
+                QRvalue = result.getContents();
+                scanResult(QRvalue);
             } else {
                 scanResult("스캔 취소");
              }
@@ -99,10 +104,10 @@ public class MainActivity extends AppCompatActivity {
     public void onButtonClick(View view) {
         switch (view.getId()) {
             case R.id.menu_play: // 놀아주기 버튼 반응
-                Toast.makeText(getApplicationContext(), "playbutton", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), PlayMain.class));
                 break;
             case R.id.menu_education: // 교육하기 버튼 반응
-                Toast.makeText(getApplicationContext(), "edubutton", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), EducationMain.class));
                 break;
             case R.id.menu_bucketlist: // 버킷리스트 버튼 반응
                 Toast.makeText(getApplicationContext(), "bucketlist", Toast.LENGTH_SHORT).show();
@@ -184,8 +189,10 @@ public class MainActivity extends AppCompatActivity {
     };
     private View.OnClickListener menu3Listener = new View.OnClickListener() {
         public void onClick(View v) {
-            startActivity(new Intent(getApplicationContext(), SpeciesMypage.class)); // 종별 특성 페이지 이동과 특수값 전달 해야하는데 데이터베이스를 활용한 문제해결을 해야함.
-            // 페이지 이동하면서 인트값 넘겨주기
+            Intent species = new Intent(getApplicationContext(), SpeciesMypage.class);
+            species.putExtra("QRcode", QRvalue);
+            species.putExtra("QRname", dogname[Integer.parseInt(QRvalue)]);
+            startActivity(species); // 종별 특성 페이지 이동과 특수값 전달 해야하는데 데이터베이스를 활용한 문제해결을 해야함.
         }
     };
     private void location() {

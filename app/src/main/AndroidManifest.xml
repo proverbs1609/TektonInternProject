@@ -3,9 +3,9 @@
     package="com.app.hamang.tektonproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <!--위치정보활용시 추가-->
+    <!-- 위치정보활용시 추가 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -29,12 +29,16 @@
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="barcode" />
 
-        <activity android:name=".InfoActivity"></activity>
+        <activity android:name=".InfoActivity" />
         <activity android:name=".EmotionActivity.EmotionMypage" />
         <activity android:name=".ActionActivity.ActionMypage" />
         <activity
             android:name=".SpeciesMypage"
             android:label="@string/title_activity_species_mypage"
             android:theme="@style/AppTheme" />
+        <activity android:name=".EducationActivity.EducationMain" />
+        <activity android:name=".PlayActivity.PlayMain" />
+        <activity android:name=".BucketMain"></activity>
     </application>
+
 </manifest>

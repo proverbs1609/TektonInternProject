@@ -15,6 +15,9 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="80dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="아무데나 배설한다" />
 
     <Button
@@ -25,6 +28,9 @@
         android:layout_toEndOf="@+id/toilet_button1"
         android:layout_toRightOf="@+id/toilet_button1"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="실내에서는 배설을 참는다" />
 
     <Button
@@ -38,6 +44,9 @@
         android:layout_marginRight="74dp"
         android:layout_marginTop="11dp"
         android:onClick="onButtonClick"
-        android:text="소량의 소변을 여기저기 본다" />
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
+        android:text="@string/str_toilet_button3" />
 
 </RelativeLayout>

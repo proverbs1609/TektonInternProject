@@ -1,6 +1,7 @@
 package com.app.hamang.tektonproject;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -28,8 +29,6 @@ public class SpeciesMypage extends AppCompatActivity {
     private static String SPEC = "php_SpeciesMypage";
 
     private static final String SPEC_JSON = "feature";
-    private static final String SPEC_DOGTIONARYID = "DOGTIONARYID";
-    private static final String SPEC_DOGSPECIES = "DogSpecies";
     private static final String SPEC_COUNTRYNAME = "CountryName";
     private static final String SPEC_DOGAGE = "DogAge";
     private static final String SPEC_DOGWEIGHT = "DogWeight";
@@ -43,6 +42,7 @@ public class SpeciesMypage extends AppCompatActivity {
     ListView SpeclistView;
     String SpecJsonString;
     String kk="값 넘겨받기";
+    String QRresult, QRname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +54,14 @@ public class SpeciesMypage extends AppCompatActivity {
 
         SpeclistView = (ListView) findViewById(R.id.featureListView);
         SpecArrayList = new ArrayList<>();
+        //종별특성 데이터번호 받기
+        Intent result = getIntent();
+        QRresult = result.getExtras().getString("QRcode");
+        QRname = result.getExtras().getString("QRname");
 
         GetData notice = new GetData();
         notice.execute("http://13.125.96.121/DogFeature.php");
+        getSupportActionBar().setTitle(QRname);
     }
 
     private class GetData extends AsyncTask<String, Void, String> {
@@ -114,35 +119,28 @@ public class SpeciesMypage extends AppCompatActivity {
     }
 
     private void showResult() {
-        try{
+        try {
             JSONObject jsonObject = new JSONObject(SpecJsonString);
             JSONArray jsonArray = jsonObject.getJSONArray(SPEC_JSON);
-
-            for(int i = 0; i < jsonArray.length(); i++) {
-                JSONObject item = jsonArray.getJSONObject(i);
-//                String id = item.getString(SPEC_DOGTIONARYID);
-//                String spec = item.getString(SPEC_DOGSPECIES);
-                String country = item.getString(SPEC_COUNTRYNAME);
-                String age = item.getString(SPEC_DOGAGE);
-                String weight = item.getString(SPEC_DOGWEIGHT);
-                String size = item.getString(SPEC_DOGSIZE);
-                String hair = item.getString(SPEC_DOGHAIR);
-                String feature = item.getString(SPEC_DOGFEATURE);
-                String disease = item.getString(SPEC_DOGDISEASE);
-                String tip = item.getString(SPEC_DOGTIP);
-                HashMap<String,String> hashMap = new HashMap<>();
-//                hashMap.put(SPEC_DOGTIONARYID, id);
-//                hashMap.put(SPEC_DOGSPECIES, spec);// 메인 위에 표시
-                hashMap.put(SPEC_COUNTRYNAME, country);
-                hashMap.put(SPEC_DOGAGE, age);
-                hashMap.put(SPEC_DOGWEIGHT, weight);
-                hashMap.put(SPEC_DOGSIZE, size);
-                hashMap.put(SPEC_DOGHAIR, hair);
-                hashMap.put(SPEC_DOGFEATURE, feature);
-                hashMap.put(SPEC_DOGDISEASE, disease);
-                hashMap.put(SPEC_DOGTIP, tip);
-                SpecArrayList.add(hashMap);
-            }
+            JSONObject item = jsonArray.getJSONObject(Integer.parseInt(QRresult));
+            String country = item.getString(SPEC_COUNTRYNAME);
+            String age = item.getString(SPEC_DOGAGE);
+            String weight = item.getString(SPEC_DOGWEIGHT);
+            String size = item.getString(SPEC_DOGSIZE);
+            String hair = item.getString(SPEC_DOGHAIR);
+            String feature = item.getString(SPEC_DOGFEATURE);
+            String disease = item.getString(SPEC_DOGDISEASE);
+            String tip = item.getString(SPEC_DOGTIP);
+            HashMap<String, String> hashMap = new HashMap<>();
+            hashMap.put(SPEC_COUNTRYNAME, country);
+            hashMap.put(SPEC_DOGAGE, age);
+            hashMap.put(SPEC_DOGWEIGHT, weight);
+            hashMap.put(SPEC_DOGSIZE, size);
+            hashMap.put(SPEC_DOGHAIR, hair);
+            hashMap.put(SPEC_DOGFEATURE, feature);
+            hashMap.put(SPEC_DOGDISEASE, disease);
+            hashMap.put(SPEC_DOGTIP, tip);
+            SpecArrayList.add(hashMap);
             ListAdapter adapter = new SimpleAdapter(
                     SpeciesMypage.this, SpecArrayList, R.layout.species_feature,
                     new String[]{SPEC_COUNTRYNAME,SPEC_DOGAGE,SPEC_DOGWEIGHT,SPEC_DOGSIZE,

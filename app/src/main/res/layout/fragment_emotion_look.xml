@@ -15,6 +15,9 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="80dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="눈을 치뜬다" />
 
     <Button
@@ -25,6 +28,9 @@
         android:layout_toEndOf="@+id/look_button1"
         android:layout_toRightOf="@+id/look_button1"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="눈을 동그랗게 뜬다" />
 
     <Button
@@ -35,7 +41,10 @@
         android:layout_alignStart="@+id/look_button1"
         android:layout_below="@+id/look_button1"
         android:layout_marginTop="10dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
         android:onClick="onButtonClick"
+        android:textSize="12dp"
         android:text="눈을 깜빡인다" />
 
     <Button
@@ -47,6 +56,9 @@
         android:layout_below="@+id/look_button2"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="눈을 가늘게 뜬다" />
 
     <Button
@@ -58,6 +70,9 @@
         android:layout_below="@+id/look_button3"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="시선을 고정한다" />
 
     <Button
@@ -69,6 +84,9 @@
         android:layout_below="@+id/look_button4"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="눈을 피한다" />
 
     <Button
@@ -80,6 +98,9 @@
         android:layout_below="@+id/look_button5"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="코를 핥는다" />
 
     <Button
@@ -91,6 +112,9 @@
         android:layout_below="@+id/look_button6"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="입꼬리를 올린다" />
 
     <Button
@@ -102,6 +126,9 @@
         android:layout_below="@+id/look_button7"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="입을 가볍게 벌린다" />
 
     <Button
@@ -113,6 +140,9 @@
         android:layout_below="@+id/look_button8"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="귀를 쫑긋하게 세운다" />
 
     <Button
@@ -124,6 +154,9 @@
         android:layout_below="@+id/look_button9"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="귀를 뒤로 젖힌다" />
 
     <Button
@@ -135,5 +168,8 @@
         android:layout_below="@+id/look_button10"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="송곳니를 드러낸다" />
 </RelativeLayout>

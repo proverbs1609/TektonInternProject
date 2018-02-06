@@ -1,15 +1,20 @@
 package com.app.hamang.tektonproject;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -45,6 +50,42 @@ public class InfoActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Button buttonshop1 = (Button) findViewById(R.id.online_shop1);
+        buttonshop1.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "연결 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.dogskingdom.co.kr/shop/main/index.php")));
+            }
+        });
+
+        Button buttonshop2 = (Button) findViewById(R.id.online_shop2);
+        buttonshop2.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "연결 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.petsbe.com/shop/main/index.php")));
+            }
+        });
+
+        Button buttonshop3 = (Button) findViewById(R.id.online_shop3);
+        buttonshop3.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "연결 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.dogpia.net/")));
+            }
+        });
+
+        Button buttonshop4 = (Button) findViewById(R.id.online_shop4);
+        buttonshop4.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "연결 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.koreapet.co.kr/")));
+            }
+        });
 
         InfolistView = (ListView) findViewById(R.id.noticeListView);
         InfoArrayList = new ArrayList<> ();

@@ -15,7 +15,10 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="80dp"
         android:onClick="onButtonClick"
-        android:text="욕구가 충족되는지 확인하기 - 충분한 산책" />
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
+        android:text="@string/str_notice_button1" />
 
     <Button
         android:id="@+id/notice_button2"
@@ -25,7 +28,10 @@
         android:layout_toEndOf="@+id/notice_button1"
         android:layout_toRightOf="@+id/notice_button1"
         android:onClick="onButtonClick"
-        android:text="욕구가 충족되는지 확인하기 - 은신처 마련" />
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
+        android:text="@string/str_notice_button2" />
 
     <Button
         android:id="@+id/notice_button3"
@@ -36,6 +42,9 @@
         android:layout_below="@+id/notice_button1"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="질병이 원인인지 파악하기" />
 
     <Button
@@ -47,6 +56,9 @@
         android:layout_below="@+id/notice_button2"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="의사소통" />
 
     <Button
@@ -58,6 +70,9 @@
         android:layout_below="@+id/notice_button3"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="일관적 기준" />
 
     <Button
@@ -69,6 +84,9 @@
         android:layout_below="@+id/notice_button4"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="원인 찾기" />
 
 </RelativeLayout>

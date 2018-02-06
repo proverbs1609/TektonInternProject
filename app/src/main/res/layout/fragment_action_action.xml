@@ -8,13 +8,14 @@
         android:id="@+id/action_button1"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="31dp"
         android:layout_marginTop="80dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
         android:onClick="onButtonClick"
+        android:textSize="12dp"
         android:text="반려인을 잘근잘근 깨문다" />
 
     <Button
@@ -24,7 +25,10 @@
         android:layout_alignTop="@+id/action_button1"
         android:layout_toEndOf="@+id/action_button1"
         android:layout_toRightOf="@+id/action_button1"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
         android:onClick="onButtonClick"
+        android:textSize="12dp"
         android:text="빈 집에서 난장판을 친다" />
 
     <Button
@@ -35,7 +39,10 @@
         android:layout_alignStart="@+id/action_button1"
         android:layout_below="@+id/action_button1"
         android:layout_marginTop="10dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
         android:onClick="onButtonClick"
+        android:textSize="12dp"
         android:text="특정 소리를 무서워한다" />
 
     <Button
@@ -46,7 +53,10 @@
         android:layout_alignStart="@+id/action_button2"
         android:layout_below="@+id/action_button2"
         android:layout_marginTop="10dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
         android:onClick="onButtonClick"
+        android:textSize="12dp"
         android:text="자주 가출한다" />
 
     <Button
@@ -57,7 +67,10 @@
         android:layout_alignStart="@+id/action_button3"
         android:layout_below="@+id/action_button3"
         android:layout_marginTop="10dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
         android:onClick="onButtonClick"
+        android:textSize="12dp"
         android:text="땅파기에 집착한다" />
 
     <Button
@@ -68,7 +81,10 @@
         android:layout_toEndOf="@+id/action_button5"
         android:layout_toRightOf="@+id/action_button5"
         android:onClick="onButtonClick"
-        android:text="목적없이 같은 행동을 반복한다" />
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
+        android:text="@string/str_action_button6" />
 
     <Button
         android:id="@+id/action_button7"
@@ -79,6 +95,9 @@
         android:layout_below="@+id/action_button5"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="반려인에게 달려든다" />
 
     <Button
@@ -90,7 +109,10 @@
         android:layout_below="@+id/action_button6"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
-        android:text="바닥에 떨어진 물건을 삼킨다" />
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
+        android:text="@string/str_action_button8" />
 
     <Button
         android:id="@+id/action_button9"
@@ -101,6 +123,9 @@
         android:layout_below="@+id/action_button7"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="변을 먹는다" />
 
     <Button
@@ -112,6 +137,9 @@
         android:layout_below="@+id/action_button8"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="쓰레기통을 뒤진다" />
 
     <Button
@@ -123,6 +151,9 @@
         android:layout_below="@+id/action_button9"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="목욕하는 것을 싫어한다" />
 
     <Button
@@ -134,6 +165,9 @@
         android:layout_below="@+id/action_button10"
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#EFEBD9"
+        android:textSize="12dp"
         android:text="부르면 도망간다" />
 
 </RelativeLayout>
