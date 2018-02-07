@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -39,9 +40,12 @@ public class MainActivity extends AppCompatActivity {
     private Activity activity;
     public static ArrayList<DogItem> animalList=new ArrayList<>();
     public static DogListAdapter listviewadapter ;
+    private EditText edit_name ;
+    private RadioGroup rg ;
+    private RadioButton rb ;
     int dogImage ;
     String dogName ;
-    String dogGender ;
+    String dogGender="" ;
     String dogSpe ;
     String dogSpeNum ;
     String QRvalue;
@@ -60,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         activity = this;
         LayoutInflater inflater1=getLayoutInflater();
-        final View view= inflater1.inflate(R.layout.mypage_main, null);;
+        final View view= inflater1.inflate(R.layout.mypage_main, null);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -107,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             mCustomDialog = new MypageMain (this,
                     "[ 댕 댕 이 ]", dogname[Integer.parseInt(msg)],
-                    ran[Integer.parseInt(msg)],
+                    ran[Integer.parseInt(msg)], "",
                     saveListener, closeListener,
                     menu1Listener, menu2Listener, menu3Listener); // 오른쪽 버튼 이벤트
             mCustomDialog.show();
@@ -173,10 +177,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),InfoActivity.class));
                 return true;
             case android.R.id.home: // 마이 페이지 버튼 반응
-                /*mCustomDialog = new MypageMain(this,
-                        "[ 나의 댕댕이 ]", "", 0, saveListener,
-                    closeListener, menu1Listener, menu2Listener, menu3Listener); // 오른쪽 버튼 이벤트
-                mCustomDialog.show();*/
                 cumtomdialog = new DogList(activity, "[댕댕이 list]", listviewadapter, mClickCloseListener);
                 cumtomdialog.show();
                 return true;
@@ -187,9 +187,12 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener saveListener = new View.OnClickListener() {
         public void onClick(View v) {
             Toast.makeText(getApplicationContext(), "등록", Toast.LENGTH_SHORT).show();
+            final AlertDialog.Builder buider = new AlertDialog.Builder(MainActivity.this);
             LayoutInflater inflater = getLayoutInflater();
             final View dialogView = inflater.inflate(R.layout.signup_layout, null);
-            final AlertDialog.Builder buider = new AlertDialog.Builder(MainActivity.this);
+            edit_name = (EditText) dialogView.findViewById(R.id.dialog_edit);
+            rg = (RadioGroup)dialogView.findViewById(R.id.signup_genderGroup) ;
+            edit_name.setText(dogname[Integer.parseInt(QRvalue)]) ;
             buider.setTitle("[댕댕이]");
             buider.setIcon(android.R.drawable.ic_menu_add);
             buider.setView(dialogView);
@@ -197,16 +200,17 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     // TODO Auto-generated method stub
-                    EditText edit_name = (EditText) dialogView.findViewById(R.id.dialog_edit);
-                    RadioGroup rg = (RadioGroup) dialogView.findViewById(R.id.dialog_rg);
-                    //edit_name.setHint(editName);
-                    String name = edit_name.getText().toString();
-                    int checkedId = rg.getCheckedRadioButtonId();
-                    RadioButton rb = (RadioButton) rg.findViewById(checkedId);
-                    String gender = rb.getText().toString();
-                    dogName = name ;
-                    dogGender = gender ;
-                    signup(dogName, dogImage) ;
+                    dogName = edit_name.getText().toString();
+                    int id = rg.getCheckedRadioButtonId() ;
+                    rb = (RadioButton) dialogView.findViewById(id) ;
+                    if(id==-1){
+                        dogGender = "" ;
+                    }
+                    else{
+                        dogGender = rb.getText().toString() ;
+                    }
+                    signup(dogName, dogGender, dogImage) ;
+                    Toast.makeText(MainActivity.this, id+"", Toast.LENGTH_SHORT).show();
                 }
             });
             buider.setNegativeButton("취소", new DialogInterface.OnClickListener() {
@@ -251,8 +255,8 @@ public class MainActivity extends AppCompatActivity {
         intent.addCategory(Intent.CATEGORY_DEFAULT);
         startActivity(intent);
     }
-    public void signup(String nameDog, int imageDog){
-        animalList.add(new DogItem(nameDog,imageDog, dogname[Integer.parseInt(QRvalue)],QRvalue )) ;
+    public void signup(String nameDog, String genderDog, int imageDog){
+        animalList.add(new DogItem(nameDog,genderDog, imageDog, dogname[Integer.parseInt(QRvalue)],QRvalue )) ;
         listviewadapter = new DogListAdapter(this, R.layout.dog_list_layout_row, animalList );
     }
     Button.OnClickListener mClickCloseListener = new View.OnClickListener() {

@@ -28,4 +28,21 @@
         <item name="android:textSize">25sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+    <style name="CheckDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Used for the buttons -->
+        <item name="colorAccent">#FFFFFF</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <!-- Used for the background -->
+        <item name="android:background">#EB7EA7</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="CheckDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Used for the background -->
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:dialogTitle">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

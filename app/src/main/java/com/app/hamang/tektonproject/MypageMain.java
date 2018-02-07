@@ -18,12 +18,14 @@ public class MypageMain extends Dialog {
     private TextView mContentView;
     private TextView mSaveButton;
     private TextView mCloseButton;
+    private TextView mGenderView ;
     private Button mMenu1Button;
     private Button mMenu2Button;
     private Button mMenu3Button;
     private ImageView mImageView;
     private String mTitle = "";
     private String mContent = "";
+    private String mGender = "";
     private int mImage;
     private View.OnClickListener mSaveClickListener;
     private View.OnClickListener mCloseClickListener;
@@ -46,6 +48,7 @@ public class MypageMain extends Dialog {
         mContentView = (TextView) findViewById(R.id.mypage_content);
         mSaveButton = (TextView) findViewById(R.id.mypage_save);
         mCloseButton = (TextView) findViewById(R.id.mypage_close);
+        mGenderView = (TextView) findViewById(R.id.mypage_gender) ;
         mMenu1Button = (Button) findViewById(R.id.mypage_menu1);
         mMenu2Button = (Button) findViewById(R.id.mypage_menu2);
         mMenu3Button = (Button) findViewById(R.id.mypage_menu3);
@@ -54,6 +57,7 @@ public class MypageMain extends Dialog {
         mTitleView.setText(mTitle);
         mContentView.setText(mContent);
         mImageView.setImageResource(mImage);
+        mGenderView.setText(mGender);
         if(mTitle == "[ 나의 댕댕이 ]") {
             mSaveButton.setText("+ 수 정");
             mSaveButton.setOnClickListener(mSaveClickListener);
@@ -68,7 +72,7 @@ public class MypageMain extends Dialog {
     }
 
     // 클릭버튼이 확인과 취소 두개일때 생성자 함수로 이벤트를 받는다
-    public MypageMain(Context context, String title, String content, int dogImage,
+    public MypageMain(Context context, String title, String content, int dogImage, String gender,
                       View.OnClickListener saveListener, View.OnClickListener closeListener,
                       View.OnClickListener menu1Listener, View.OnClickListener menu2Listener,
                       View.OnClickListener menu3Listener) {
@@ -76,6 +80,7 @@ public class MypageMain extends Dialog {
         this.mTitle = title;
         this.mContent = content;
         this.mImage = dogImage;
+        this.mGender = gender ;
         this.mSaveClickListener = saveListener;
         this.mCloseClickListener = closeListener;
         this.mMenu1ClickListener = menu1Listener;

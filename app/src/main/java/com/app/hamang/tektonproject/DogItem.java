@@ -8,16 +8,19 @@ package com.app.hamang.tektonproject;
 public class DogItem {
     String animalName ;
     int animalImage;
+    String animalGender ;
     String dogSpe ;
     String dogSpeNum ;
 
-    public DogItem(String animalName, int animalImage, String dogSpe, String dogSpeNum) {
+    public DogItem(String animalName, String animalGender, int animalImage, String dogSpe, String dogSpeNum) {
         this.animalImage = animalImage ;
         this.animalName = animalName ;
+        this.animalGender = animalGender ;
         this.dogSpe = dogSpe ;
         this.dogSpeNum = dogSpeNum ;
     }
     public String getAnimalName() {return animalName ;}
+    public String getAnimalGender() {return animalGender ; }
     public int getAnimalImage()
     {
         return animalImage ;
