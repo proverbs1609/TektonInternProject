@@ -37,17 +37,17 @@ public class SpeciesMypage extends AppCompatActivity {
     private static final String SPEC_DOGFEATURE = "DogFeature";
     private static final String SPEC_DOGDISEASE = "DogDisease";
     private static final String SPEC_DOGTIP = "DogTip";
+    private String QRname;
 
     ArrayList<HashMap<String, String>> SpecArrayList;
     ListView SpeclistView;
     String SpecJsonString;
-    String kk="값 넘겨받기";
-    String QRresult, QRname;
+    String QRresult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_species_mypage);
+        setContentView(R.layout.mypage_species);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -67,14 +67,12 @@ public class SpeciesMypage extends AppCompatActivity {
     private class GetData extends AsyncTask<String, Void, String> {
         ProgressDialog progressDialog;
         String errorString = null;
-
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
             progressDialog = ProgressDialog.show(SpeciesMypage.this,
-                    kk+"의 특징은요..",null, true, true);
+                    QRname+"의 특징은요..",null, true, true);
         }
-
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
@@ -84,7 +82,6 @@ public class SpeciesMypage extends AppCompatActivity {
                 showResult();
             }
         }
-
         @Override
         protected String doInBackground(String... params) {
             String serverURL = params[0];
@@ -117,7 +114,6 @@ public class SpeciesMypage extends AppCompatActivity {
             }
         }
     }
-
     private void showResult() {
         try {
             JSONObject jsonObject = new JSONObject(SpecJsonString);
@@ -142,7 +138,7 @@ public class SpeciesMypage extends AppCompatActivity {
             hashMap.put(SPEC_DOGTIP, tip);
             SpecArrayList.add(hashMap);
             ListAdapter adapter = new SimpleAdapter(
-                    SpeciesMypage.this, SpecArrayList, R.layout.species_feature,
+                    SpeciesMypage.this, SpecArrayList, R.layout.mypage_species_feature,
                     new String[]{SPEC_COUNTRYNAME,SPEC_DOGAGE,SPEC_DOGWEIGHT,SPEC_DOGSIZE,
                             SPEC_DOGHAIR,SPEC_DOGFEATURE,SPEC_DOGDISEASE,SPEC_DOGTIP},
                     new int[]{R.id.country_name, R.id.dog_age, R.id.dog_weight, R.id.dog_size,
@@ -153,14 +149,12 @@ public class SpeciesMypage extends AppCompatActivity {
             Log.d(SPEC, "showResuult : ", e);
         }
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_emotion_mypage, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

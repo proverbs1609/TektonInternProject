@@ -40,7 +40,7 @@ public class VideoPlay extends Dialog {
         IpWindow.dimAmount = 0.5f;
         getWindow().setAttributes(IpWindow);
 
-        setContentView(R.layout.activity_video_play);
+        setContentView(R.layout.play_video);
         titleView = (TextView) findViewById(R.id.p_video_title);
         closeButton = (Button) findViewById(R.id.p_video_close);
         menu1Button = (Button) findViewById(R.id.p_video_menu1);

@@ -50,28 +50,27 @@
             android:onClick="onButtonClick"
             android:text="영상"
             android:textColor="#FFFFFF"
-            android:textSize="15dp"
-            android:textStyle="bold" />
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/textView2"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="놀아주기 영상" />
+            android:textColor="#667572"
+            android:text="본 영상은 youtube를 통해 제공되므로\nWiFi환경에서의 사용을 권장합니다." />
 
         <Button
             android:id="@+id/play_necessity"
             android:layout_width="250dp"
             android:layout_height="50dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:background="@android:drawable/dialog_holo_light_frame"
             android:backgroundTint="#B6C296"
             android:onClick="onButtonClick"
             android:text="놀이의 필요성"
             android:textColor="#FFFFFF"
-            android:textSize="15dp"
-            android:textStyle="bold" />
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/play_rule"
@@ -83,8 +82,7 @@
             android:onClick="onButtonClick"
             android:text="놀이의 기본 규칙"
             android:textColor="#FFFFFF"
-            android:textSize="15dp"
-            android:textStyle="bold" />
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/play_toy"
@@ -96,8 +94,7 @@
             android:onClick="onButtonClick"
             android:text="장난감"
             android:textColor="#FFFFFF"
-            android:textSize="15dp"
-            android:textStyle="bold" />
+            android:textSize="15dp" />
 
     </LinearLayout>
 

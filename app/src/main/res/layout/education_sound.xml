@@ -5,7 +5,7 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:weightSum="10"
-    android:background="@color/background"
+    android:background="#D0A727"
     android:orientation="vertical">
 
     <TextView
@@ -13,6 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="4"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="소리로 교육하기"
         android:textColor="#FFFFFF"
@@ -23,100 +25,145 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="4"
-        android:layout_marginTop="20dp"
-        android:text="클리커" />
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="클리커"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/sound_clicker"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:text="화장실 교육시 유념할 사항" />
+        android:background="@mipmap/ic_launcher_redbutton" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="4"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:textSize="11dp"
+        android:textColor="#FFFFFF"
         android:text="클리커는 누르면 '딸깍'소리가 나는 반려견 교육 도구로 산책, 명령어 교육, 배변 교육 등 다양한 상황에서 이용할 수 있다." />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="4"
-        android:layout_marginTop="20dp"
-        android:text="주파수" />
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="주파수"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="4"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/sound_8"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:text="8KHz" />
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:backgroundTint="#DCDCDC"
+            android:text="8KHz"
+            android:textColor="#667572"
+            android:textSize="12dp" />
 
         <Button
             android:id="@+id/sound_10"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:text="10KHz" />
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:backgroundTint="#DCDCDC"
+            android:text="10KHz"
+            android:textColor="#667572"
+            android:textSize="12dp" />
 
         <Button
             android:id="@+id/sound_12"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:text="12KHz" />
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:backgroundTint="#DCDCDC"
+            android:text="12KHz"
+            android:textColor="#667572"
+            android:textSize="12dp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="4"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/sound_14"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:text="14KHz" />
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:backgroundTint="#DCDCDC"
+            android:text="14KHz"
+            android:textColor="#667572"
+            android:textSize="12dp" />
 
         <Button
             android:id="@+id/sound_16"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:text="16KHz" />
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:backgroundTint="#DCDCDC"
+            android:text="16KHz"
+            android:textColor="#667572"
+            android:textSize="12dp" />
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="4"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:textSize="11dp"
+        android:textColor="#FFFFFF"
         android:text="개는 20,000Hz 이상의 주파수뿐 아니라, 아주 작은 소리도 들을 수 있다. 이런 특성을 고려하여, 동물이 편안함을 느끼도록 돕는다." />
 
     <Button
         android:id="@+id/sound_close"
+        android:background="#D0A727"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="x" />
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="10dp"
+        android:text="x"
+        android:textSize="25dp"
+        android:textColor="#FFFFFF"/>
 
 </LinearLayout>

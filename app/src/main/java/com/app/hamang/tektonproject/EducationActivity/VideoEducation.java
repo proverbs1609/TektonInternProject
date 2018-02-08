@@ -40,7 +40,7 @@ public class VideoEducation extends Dialog {
         IpWindow.dimAmount = 0.5f;
         getWindow().setAttributes(IpWindow);
 
-        setContentView(R.layout.activity_video_education);
+        setContentView(R.layout.education_video);
         titleView = (TextView) findViewById(R.id.video_title);
         closeButton = (Button) findViewById(R.id.video_close);
         menu1Button = (Button) findViewById(R.id.video_menu1);

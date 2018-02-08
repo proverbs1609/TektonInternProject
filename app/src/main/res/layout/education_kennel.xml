@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="#D0A727"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:weightSum="10">
+
+    <TextView
+        android:id="@+id/kennel_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="켄넬 교육하기"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/kennel_menu1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#DCDCDC"
+        android:text="켄넬 연습의 필요성"
+        android:textColor="#667572" />
+
+    <Button
+        android:id="@+id/kennel_menu2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#DCDCDC"
+        android:text="바람직한 켄넬의 조건"
+        android:textSize="15sp"
+        android:textColor="#667572" />
+
+    <Button
+        android:id="@+id/kennel_menu3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#DCDCDC"
+        android:text="켄넬 연습하는 방법"
+        android:textSize="15sp"
+        android:textColor="#667572" />
+
+    <Button
+        android:id="@+id/kennel_menu4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#DCDCDC"
+        android:text="영상으로 확인하기"
+        android:textSize="15sp"
+        android:textColor="#667572" />
+
+    <Button
+        android:id="@+id/kennel_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:background="#D0A727"
+        android:text="x"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp" />
+
+</LinearLayout>

@@ -32,7 +32,7 @@ public class NecessityPlay extends Dialog {
         IpWindow.dimAmount = 0.5f;
         getWindow().setAttributes(IpWindow);
 
-        setContentView(R.layout.activity_necessity_play);
+        setContentView(R.layout.play_necessity);
         titleView = (TextView) findViewById(R.id.p_necessity_title);
         closeButton = (Button) findViewById(R.id.p_necessity_close);
         menu1Button = (Button) findViewById(R.id.p_necessity_menu1);

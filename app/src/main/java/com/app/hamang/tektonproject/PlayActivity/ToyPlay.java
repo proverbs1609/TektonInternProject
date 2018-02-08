@@ -2,7 +2,6 @@ package com.app.hamang.tektonproject.PlayActivity;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -34,7 +33,7 @@ public class ToyPlay extends Dialog {
         IpWindow.dimAmount = 0.5f;
         getWindow().setAttributes(IpWindow);
 
-        setContentView(R.layout.activity_toy_play);
+        setContentView(R.layout.play_toy);
         titleView = (TextView) findViewById(R.id.p_toy_title);
         closeButton = (Button) findViewById(R.id.p_toy_close);
         menu1Button = (Button) findViewById(R.id.p_toy_menu1);

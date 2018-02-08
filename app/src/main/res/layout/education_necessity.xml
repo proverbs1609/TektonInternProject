@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="#D0A727"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:weightSum="10">
+
+    <TextView
+        android:id="@+id/necessity_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="교육의 필요성"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/necessity_menu1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#DCDCDC"
+        android:text="교육이 필요한 이유"
+        android:textSize="15sp"
+        android:textColor="#667572" />
+
+    <Button
+        android:id="@+id/necessity_menu2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#DCDCDC"
+        android:text="교육의 원칙"
+        android:textSize="15sp"
+        android:textColor="#667572" />
+
+    <Button
+        android:id="@+id/necessity_close"
+        android:background="#D0A727"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="10dp"
+        android:text="x"
+        android:textSize="25dp"
+        android:textColor="#FFFFFF"/>
+
+</LinearLayout>

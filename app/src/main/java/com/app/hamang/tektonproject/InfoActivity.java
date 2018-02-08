@@ -29,14 +29,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class InfoActivity extends AppCompatActivity {
-
     private static String INFO = "php_InfoActivity";
-
     private static final String INFO_JSON = "notice";
     private static final String INFO_NOTICECONTENT = "noticeContent";
     private static final String INFO_NOTICENAME = "noticeName";
     private static final String INFO_NOTICEDATE = "noticeDate";
-
     ArrayList<HashMap<String, String>> InfoArrayList;
     ListView InfolistView;
     String InfoJsonString;
@@ -44,48 +41,14 @@ public class InfoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info);
+        setContentView(R.layout.main_info);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Button buttonshop1 = (Button) findViewById(R.id.online_shop1);
-        buttonshop1.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "연결 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.dogskingdom.co.kr/shop/main/index.php")));
-            }
-        });
-
-        Button buttonshop2 = (Button) findViewById(R.id.online_shop2);
-        buttonshop2.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "연결 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.petsbe.com/shop/main/index.php")));
-            }
-        });
-
-        Button buttonshop3 = (Button) findViewById(R.id.online_shop3);
-        buttonshop3.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "연결 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.dogpia.net/")));
-            }
-        });
-
-        Button buttonshop4 = (Button) findViewById(R.id.online_shop4);
-        buttonshop4.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "연결 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.koreapet.co.kr/")));
-            }
-        });
+        onlineShopClick();
 
         InfolistView = (ListView) findViewById(R.id.noticeListView);
         InfoArrayList = new ArrayList<> ();
@@ -93,18 +56,15 @@ public class InfoActivity extends AppCompatActivity {
         GetData info = new GetData();
         info.execute("http://13.125.96.121/NoticeList.php");
     }
-
     private class GetData extends AsyncTask<String, Void, String> {
         ProgressDialog progressDialog;
         String errorString = null;
-
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
             progressDialog = ProgressDialog.show(InfoActivity.this,
                     "공지사항 업데이트중...", null, true, true);
         }
-
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
@@ -115,7 +75,6 @@ public class InfoActivity extends AppCompatActivity {
                 showResult();
             }
         }
-
         @Override
         protected String doInBackground(String... params) {
             String serverURL = params[0];
@@ -151,7 +110,6 @@ public class InfoActivity extends AppCompatActivity {
             }
         }
     }
-
     private void showResult(){
         try {
             JSONObject jsonObject = new JSONObject(InfoJsonString);
@@ -190,5 +148,42 @@ public class InfoActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    public void onlineShopClick() {
+        Button buttonshop1 = (Button) findViewById(R.id.online_shop1);
+        buttonshop1.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "연결 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.dogskingdom.co.kr/shop/main/index.php")));
+            }
+        });
+
+        Button buttonshop2 = (Button) findViewById(R.id.online_shop2);
+        buttonshop2.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "연결 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.petsbe.com/shop/main/index.php")));
+            }
+        });
+
+        Button buttonshop3 = (Button) findViewById(R.id.online_shop3);
+        buttonshop3.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "연결 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.dogpia.net/")));
+            }
+        });
+
+        Button buttonshop4 = (Button) findViewById(R.id.online_shop4);
+        buttonshop4.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "연결 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.koreapet.co.kr/")));
+            }
+        });
     }
 }

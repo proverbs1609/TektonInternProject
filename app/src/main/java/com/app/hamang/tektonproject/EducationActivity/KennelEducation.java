@@ -36,7 +36,7 @@ public class KennelEducation extends Dialog {
         IpWindow.dimAmount = 0.5f;
         getWindow().setAttributes(IpWindow);
 
-        setContentView(R.layout.activity_kennel_education);
+        setContentView(R.layout.education_kennel);
         titleView = (TextView) findViewById(R.id.kennel_title);
         closeButton = (Button) findViewById(R.id.kennel_close);
         menu1Button = (Button) findViewById(R.id.kennel_menu1);

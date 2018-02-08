@@ -1,12 +1,16 @@
 package com.app.hamang.tektonproject.PlayActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.ContextThemeWrapper;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.app.hamang.tektonproject.R;
@@ -21,23 +25,25 @@ public class PlayMain extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_play_main);
+        setContentView(R.layout.main_play);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        ButtonInfo = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.MyAlertDialogStyle));
+        ButtonInfo = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.PlaynEduAlertDialogStyle));
         ButtonInfo.setNegativeButton("x", null);
     }
     public void onButtonClick(View view) {
         switch (view.getId()) {
             case R.id.play_video:
-                videodialog = new VideoPlay(this, "영 상",
-                        videoClose, videoMenu1, videoMenu2, videoMenu3,
-                        videoMenu4, videoMenu5, videoMenu6);
-                videodialog.show();
+                if(isNetworkConnected()) {
+                    videodialog = new VideoPlay(this, "영 상",
+                            videoClose, videoMenu1, videoMenu2, videoMenu3,
+                            videoMenu4, videoMenu5, videoMenu6);
+                    videodialog.show();
+                } else internetDialog();
                 break;
             case R.id.play_necessity:
                 necessitydialog = new NecessityPlay(this,"놀이의 필요성",
@@ -56,7 +62,15 @@ public class PlayMain extends AppCompatActivity {
                 break;
         }
     }
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            this.finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
     private View.OnClickListener videoClose = new View.OnClickListener() {
         public void onClick(View v) {
             videodialog.dismiss();
@@ -202,4 +216,17 @@ public class PlayMain extends AppCompatActivity {
             ButtonInfo.show();
         }
     };
+    private boolean isNetworkConnected() {
+        ConnectivityManager internet = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetWork = internet.getActiveNetworkInfo();
+        boolean isNetworkConnected = activeNetWork != null && activeNetWork.isConnectedOrConnecting();
+        return isNetworkConnected;
+    }
+    private void internetDialog() {
+        android.app.AlertDialog.Builder internetdialog = new android.app.AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AlertDialogStyle));
+        internetdialog.setNegativeButton("확인",null);
+        internetdialog.setTitle("인터넷 없음");
+        internetdialog.setMessage("현재 인터넷을 찾을 수 없습니다. WiFi또는 데이터 네트워크를 확인해 주세요.");
+        internetdialog.show();
+    }
 }

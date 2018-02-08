@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:weightSum="10"
+    android:background="#D0A727"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/p_video_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:text="영 상" />
+
+    <Button
+        android:id="@+id/p_video_menu1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#DCDCDC"
+        android:text="터그놀이"
+        android:textSize="15sp"
+        android:textColor="#667572" />
+
+    <Button
+        android:id="@+id/p_video_menu2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#DCDCDC"
+        android:text="노즈워크"
+        android:textSize="15sp"
+        android:textColor="#667572" />
+
+    <Button
+        android:id="@+id/p_video_menu3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#DCDCDC"
+        android:text="타겟팅"
+        android:textSize="15sp"
+        android:textColor="#667572" />
+
+    <Button
+        android:id="@+id/p_video_menu4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#DCDCDC"
+        android:text="어질리티"
+        android:textSize="15sp"
+        android:textColor="#667572" />
+
+    <Button
+        android:id="@+id/p_video_menu5"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#DCDCDC"
+        android:text="던지기 놀이"
+        android:textSize="15sp"
+        android:textColor="#667572" />
+
+    <Button
+        android:id="@+id/p_video_menu6"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#DCDCDC"
+        android:text="손수건 놀이"
+        android:textSize="15sp"
+        android:textColor="#667572" />
+
+    <Button
+        android:id="@+id/p_video_close"
+        android:background="#D0A727"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:text="x"
+        android:textSize="25dp"
+        android:textColor="#FFFFFF"/>
+
+</LinearLayout>

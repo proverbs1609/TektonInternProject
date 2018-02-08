@@ -32,7 +32,7 @@ public class NecessityEducation extends Dialog {
         IpWindow.dimAmount = 0.5f;
         getWindow().setAttributes(IpWindow);
 
-        setContentView(R.layout.activity_necessity_education);
+        setContentView(R.layout.education_necessity);
         titleView = (TextView) findViewById(R.id.necessity_title);
         closeButton = (Button) findViewById(R.id.necessity_close);
         menu1Button = (Button) findViewById(R.id.necessity_menu1);

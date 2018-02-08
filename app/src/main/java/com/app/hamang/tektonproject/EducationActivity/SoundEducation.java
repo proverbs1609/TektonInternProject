@@ -2,7 +2,6 @@ package com.app.hamang.tektonproject.EducationActivity;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -46,7 +45,7 @@ public class SoundEducation extends Dialog {
         IpWindow.dimAmount = 0.5f;
         getWindow().setAttributes(IpWindow);
 
-        setContentView(R.layout.activity_sound_education);
+        setContentView(R.layout.education_sound);
         titleView = (TextView) findViewById(R.id.sound_title);
         closeButton = (Button) findViewById(R.id.sound_close);
         clickerButton = (Button) findViewById(R.id.sound_clicker);

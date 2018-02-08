@@ -4,9 +4,10 @@
     android:layout_height="fill_parent"
     android:gravity="center"
     android:orientation="vertical">
+
     <LinearLayout
-        android:layout_width="275dip"
-        android:layout_height="400dip"
+        android:layout_width="267dp"
+        android:layout_height="424dp"
         android:background="#FFDDA7"
         android:orientation="vertical">
 
@@ -18,12 +19,13 @@
             android:gravity="center"
             android:textColor="#006A83"
             android:textSize="25sp" />
+
         <TextView
             android:id="@+id/mypage_content"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginTop="5dp"
+            android:gravity="center"
             android:textColor="#8B4513"
             android:textSize="20sp" />
 
@@ -36,31 +38,46 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center" />
+
         </FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/mypage_gender"
+                android:layout_width="41dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="#8B4513"
+                android:textSize="15sp" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="20dp"
             android:gravity="right"
-            android:paddingRight="40dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingRight="40dp">
 
             <TextView
                 android:id="@+id/mypage_save"
-                android:gravity="center_horizontal"
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
                 android:background="#A1BD93"
+                android:gravity="center_horizontal"
                 android:textColor="#FFFFFF"
                 android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/mypage_close"
-                android:gravity="center_horizontal"
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="55dp"
                 android:background="#A1BD93"
+                android:gravity="center_horizontal"
                 android:onClick="onButtonClick"
                 android:text="x 닫 기"
                 android:textColor="#FFFFFF"

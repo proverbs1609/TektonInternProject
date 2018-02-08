@@ -2,7 +2,6 @@ package com.app.hamang.tektonproject.PlayActivity;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -34,7 +33,7 @@ public class RulePlay extends Dialog {
         IpWindow.dimAmount = 0.5f;
         getWindow().setAttributes(IpWindow);
 
-        setContentView(R.layout.activity_rule_play);
+        setContentView(R.layout.play_rule);
         titleView = (TextView) findViewById(R.id.p_rule_title);
         closeButton = (Button) findViewById(R.id.p_rule_close);
         menu1Button = (Button) findViewById(R.id.p_rule_menu1);

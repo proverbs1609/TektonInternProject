@@ -36,7 +36,7 @@ public class ToiletEducation extends Dialog {
         IpWindow.dimAmount = 0.5f;
         getWindow().setAttributes(IpWindow);
 
-        setContentView(R.layout.activity_toilet_education);
+        setContentView(R.layout.education_toilet);
         titleView = (TextView) findViewById(R.id.toilet_title);
         closeButton = (Button) findViewById(R.id.toilet_close);
         menu1Button = (Button) findViewById(R.id.toilet_menu1);

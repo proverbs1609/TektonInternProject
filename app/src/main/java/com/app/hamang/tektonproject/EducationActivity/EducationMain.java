@@ -1,7 +1,10 @@
 package com.app.hamang.tektonproject.EducationActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -34,14 +37,14 @@ public class EducationMain extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_education_main);
+        setContentView(R.layout.main_education);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        ButtonInfo = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.MyAlertDialogStyle));
+        ButtonInfo = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.PlaynEduAlertDialogStyle));
         ButtonInfo.setNegativeButton("x", null);
 
         clickersound = MediaPlayer.create(this, R.raw.sound1);
@@ -55,10 +58,12 @@ public class EducationMain extends AppCompatActivity {
     public void onButtonClick(View view) {
         switch (view.getId()) {
             case R.id.education_video:
-                videodialog = new VideoEducation(this, "영 상",
-                        videoClose, videoMenu1, videoMenu2, videoMenu3,
-                        videoMenu4, videoMenu5, videoMenu6);
-                videodialog.show();
+                if(isNetworkConnected()) {
+                    videodialog = new VideoEducation(this, "영 상",
+                            videoClose, videoMenu1, videoMenu2, videoMenu3,
+                            videoMenu4, videoMenu5, videoMenu6);
+                    videodialog.show();
+                } else internetDialog();
                 break;
             case R.id.education_necessity:
                 necessitydialog = new NecessityEducation(this, "교육의 필요성",
@@ -351,4 +356,17 @@ public class EducationMain extends AppCompatActivity {
             return true;
         }
     };
+    private boolean isNetworkConnected() {
+        ConnectivityManager internet = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetWork = internet.getActiveNetworkInfo();
+        boolean isNetworkConnected = activeNetWork != null && activeNetWork.isConnectedOrConnecting();
+        return isNetworkConnected;
+    }
+    private void internetDialog() {
+        android.app.AlertDialog.Builder internetdialog = new android.app.AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AlertDialogStyle));
+        internetdialog.setNegativeButton("확인",null);
+        internetdialog.setTitle("인터넷 없음");
+        internetdialog.setMessage("현재 인터넷을 찾을 수 없습니다. WiFi또는 데이터 네트워크를 확인해 주세요.");
+        internetdialog.show();
+    }
 }

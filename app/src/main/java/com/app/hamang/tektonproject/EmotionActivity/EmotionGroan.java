@@ -15,7 +15,7 @@ import com.app.hamang.tektonproject.R;
 public class EmotionGroan extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_emotion_groan, container, false);
+        View view = inflater.inflate(R.layout.mypage_emotion_groan, container, false);
         return view;
     }
 }

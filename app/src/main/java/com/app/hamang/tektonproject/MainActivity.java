@@ -1,18 +1,29 @@
 package com.app.hamang.tektonproject;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,19 +34,26 @@ import com.app.hamang.tektonproject.PlayActivity.PlayMain;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     private final long FINISH_INTERVAL_TIME = 2000; // 두번 클릭 종료를 위한 시간
     private long   backPressedTime = 0;
     private MypageMain mCustomDialog;
-    TextView text, text2, text3;
-    String str = "";
-    String str1 = "";//빈 문자열 String 객체
-    String str2 = "";
-    String QRvalue;
+    private Activity activity;
+    private EditText edit_name;
+    private RadioGroup rg;
+    private RadioButton rb;
+    int dogImage;
+    String dogName, dogSpe, dogSpeNum, QRvalue;
+    String dogGender = "";
     Intent dogcommunity = new Intent(Intent.ACTION_VIEW, Uri.parse("http://m.cafe.naver.com/dogpalza.cafe")); // 네이버 카페 연동 선언
     Intent doghospital = new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.map.naver.com/search2/search.nhn?query=%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&sm=hty"));
     Intent dogshop = new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.map.naver.com/search2/search.nhn?query=%EC%95%A0%EA%B2%AC%EC%83%B5&sm=hty"));
     LocationManager locationManager;
+    public static DogList cumtomdialog;
+    public static ArrayList<DogItem> animalList=new ArrayList<>();
+    public static DogListAdapter listviewadapter;
     public static final int ran[]={
             R.mipmap.ic_maltese_round, R.mipmap.ic_poodle_round, R.mipmap.ic_welshcorgi_round, R.mipmap.ic_siberianhusky_round, R.mipmap.ic_goldenretriever_round
     };
@@ -44,10 +62,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        final Activity activity = this;
-        LayoutInflater inflater1=getLayoutInflater();
-        final View view= inflater1.inflate(R.layout.mypage_main, null);;
+        setContentView(R.layout.main_activity);
+        activity = this;
+//        LayoutInflater inflater1=getLayoutInflater();
+//        final View view= inflater1.inflate(R.layout.main_mypage, null);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -81,12 +99,8 @@ public class MainActivity extends AppCompatActivity {
                 // 값을 넘겨주기 위해 저장.
                 QRvalue = result.getContents();
                 scanResult(QRvalue);
-            } else {
-                scanResult("스캔 취소");
-             }
-        } else {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
+            } else scanResult("스캔 취소");
+        } else super.onActivityResult(requestCode, resultCode, data);
     }
 
     private void scanResult(String msg) {
@@ -94,10 +108,12 @@ public class MainActivity extends AppCompatActivity {
         } else {
             mCustomDialog = new MypageMain (this,
                     "[ 댕 댕 이 ]", dogname[Integer.parseInt(msg)],
-                    ran[Integer.parseInt(msg)],
+                    ran[Integer.parseInt(msg)], "",
                     saveListener, closeListener,
                     menu1Listener, menu2Listener, menu3Listener); // 오른쪽 버튼 이벤트
             mCustomDialog.show();
+            dogImage = ran[Integer.parseInt(msg)];
+            dogSpe = dogname[Integer.parseInt(msg)];
         }
     }
 
@@ -110,31 +126,36 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), EducationMain.class));
                 break;
             case R.id.menu_bucketlist: // 버킷리스트 버튼 반응
-                Toast.makeText(getApplicationContext(), "bucketlist", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), BucketMain.class));
                 break;
             case R.id.menu_hospital: // 병원 찾기 버튼 반응
-                if(!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-                    location();
-                } else {
-                    startActivity(doghospital);
-                    Toast.makeText(getApplicationContext(), "검색 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_LONG).show();
-                }
+                if(isNetworkConnected()) {
+                    if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) location();
+                    else {
+                        startActivity(doghospital);
+                        Toast.makeText(getApplicationContext(), "검색 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_LONG).show();
+                    }
+                } else internetDialog();
                 break;
             case R.id.menu_shop: // 샵 찾기 버튼 반응
-                if(!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-                    location();
-                } else {
-                    startActivity(dogshop);
-                    Toast.makeText(getApplicationContext(), "검색 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_LONG).show();
-                }
+                if(isNetworkConnected()) {
+                    if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
+                        location();
+                    else {
+                        startActivity(dogshop);
+                        Toast.makeText(getApplicationContext(), "검색 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_LONG).show();
+                    }
+                } else internetDialog();
                 break;
             case R.id.menu_community: // 커뮤니티 버튼 반응
-                startActivity(dogcommunity);
-                Toast.makeText(getApplicationContext(), "연결 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_LONG).show();
-                break;
+                if(isNetworkConnected()) {
+                    startActivity(dogcommunity);
+                    Toast.makeText(getApplicationContext(), "연결 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_LONG).show();
+                    break;
+                } else internetDialog();
         }
     }
-    // 뒤로가기 두번 클릭으로 앱 종료 만들기
+    // 뒤로가기 두번 클릭으로 앱 종료
     @Override
     public void onBackPressed() {
         long tempTime       = System.currentTimeMillis();
@@ -158,18 +179,44 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),InfoActivity.class));
                 return true;
             case android.R.id.home: // 마이 페이지 버튼 반응
-                mCustomDialog = new MypageMain(this,
-                        "[ 나의 댕댕이 ]", "", 0, saveListener,
-                    closeListener, menu1Listener, menu2Listener, menu3Listener); // 오른쪽 버튼 이벤트
-                mCustomDialog.show();
+                cumtomdialog = new DogList(activity, "[나의 댕댕이들]", listviewadapter, mClickCloseListener);
+                cumtomdialog.show();
                 return true;
         }
         return super.onOptionsItemSelected(item);
     }
+    Button.OnClickListener mClickCloseListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            cumtomdialog.dismiss();
+        }
+    };
     // 커스텀 다이얼로그 내 버튼 생성 및 등록
     private View.OnClickListener saveListener = new View.OnClickListener() {
         public void onClick(View v) {
-            Toast.makeText(getApplicationContext(), "등록", Toast.LENGTH_SHORT).show();
+            final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            LayoutInflater inflater = getLayoutInflater();
+            final View dialogView = inflater.inflate(R.layout.sign_up_layout, null);
+            edit_name = (EditText) dialogView.findViewById(R.id.dialog_edit);
+            rg = (RadioGroup)dialogView.findViewById(R.id.signup_genderGroup);
+            edit_name.setText(dogname[Integer.parseInt(QRvalue)]);
+            builder.setTitle("[댕댕이]");
+            builder.setView(dialogView);
+            builder.setPositiveButton("확인",new DialogInterface.OnClickListener(){
+                @Override
+                public void onClick (DialogInterface dialog, int which) {
+                    dogName = edit_name.getText().toString();
+                    int id = rg.getCheckedRadioButtonId();
+                    rb = (RadioButton) dialogView.findViewById(id);
+                    if(id == -1) dogGender = "";
+                    else dogGender = rb.getText().toString();
+                    signup(dogName, dogGender, dogImage);
+                }
+            });
+            builder.setNegativeButton("취소", null);
+            AlertDialog dialog = builder.create();
+            dialog.setCanceledOnTouchOutside(false);
+            dialog.show();
         }
     };
     private View.OnClickListener closeListener = new View.OnClickListener() {
@@ -192,7 +239,7 @@ public class MainActivity extends AppCompatActivity {
             Intent species = new Intent(getApplicationContext(), SpeciesMypage.class);
             species.putExtra("QRcode", QRvalue);
             species.putExtra("QRname", dogname[Integer.parseInt(QRvalue)]);
-            startActivity(species); // 종별 특성 페이지 이동과 특수값 전달 해야하는데 데이터베이스를 활용한 문제해결을 해야함.
+            startActivity(species); // 종별 특성 페이지 이동
         }
     };
     private void location() {
@@ -201,5 +248,22 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
         intent.addCategory(Intent.CATEGORY_DEFAULT);
         startActivity(intent);
+    }
+    private boolean isNetworkConnected() {
+        ConnectivityManager internet = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetWork = internet.getActiveNetworkInfo();
+        boolean isNetworkConnected = activeNetWork != null && activeNetWork.isConnectedOrConnecting();
+        return isNetworkConnected;
+    }
+    private void internetDialog() {
+        AlertDialog.Builder internetdialog = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AlertDialogStyle));
+        internetdialog.setNegativeButton("확인",null);
+        internetdialog.setTitle("인터넷 없음");
+        internetdialog.setMessage("현재 인터넷을 찾을 수 없습니다. WiFi또는 데이터 네트워크를 확인해 주세요.");
+        internetdialog.show();
+    }
+    public void signup(String nameDog, String genderDog, int imageDog) {
+        animalList.add(new DogItem(nameDog,genderDog,imageDog,dogname[Integer.parseInt(QRvalue)],QRvalue));
+        listviewadapter = new DogListAdapter(this, R.layout.dog_list_layout_row, animalList);
     }
 }

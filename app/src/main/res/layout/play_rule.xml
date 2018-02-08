@@ -5,7 +5,7 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:weightSum="10"
-    android:background="@color/background"
+    android:background="#D0A727"
     android:orientation="vertical">
 
     <TextView
@@ -13,6 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="4"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:textSize="20dp"
         android:textColor="#FFFFFF"
@@ -22,31 +24,49 @@
     <Button
         android:id="@+id/p_rule_menu1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:text="놀이 규칙 1 - 주도권" />
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#DCDCDC"
+        android:text="놀이 규칙 1 - 주도권"
+        android:textSize="15sp"
+        android:textColor="#667572" />
 
     <Button
         android:id="@+id/p_rule_menu2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:text="놀이 규칙 2 - 감정 조절 연습" />
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#DCDCDC"
+        android:text="놀이 규칙 2 - 감정 조절 연습"
+        android:textSize="15sp"
+        android:textColor="#667572" />
 
     <Button
         android:id="@+id/p_rule_menu3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:text="놀이 규칙 3 - 보상" />
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#DCDCDC"
+        android:text="놀이 규칙 3 - 보상"
+        android:textSize="15sp"
+        android:textColor="#667572" />
 
     <Button
         android:id="@+id/p_rule_close"
+        android:background="#D0A727"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:text="x" />
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:text="x"
+        android:textSize="25dp"
+        android:textColor="#FFFFFF"/>
 </LinearLayout>

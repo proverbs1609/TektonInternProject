@@ -15,7 +15,7 @@ import com.app.hamang.tektonproject.R;
 public class ActionNotice extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_action_notice, container, false);
+        View view = inflater.inflate(R.layout.mypage_action_notice, container, false);
         return view;
     }
 }

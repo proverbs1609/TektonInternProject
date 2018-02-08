@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.app.hamang.tektonproject.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/main_activity">
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/menu_qrcode"
-        android:layout_width="56dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="480dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="490dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:clickable="true"
@@ -20,6 +20,7 @@
         app:fabSize="mini"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,13 +44,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.254" />
+        app:layout_constraintTop_toBottomOf="@+id/menu_qrcode"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/menu_play"
         android:layout_width="250dp"
-        android:layout_height="30dp"
+        android:layout_height="35dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -61,7 +62,7 @@
         android:paddingRight="40dp"
         android:text="댕댕이 놀아주기"
         android:textColor="#FFFFFF"
-        android:textSize="15sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -69,10 +70,10 @@
     <Button
         android:id="@+id/menu_education"
         android:layout_width="250dp"
-        android:layout_height="30dp"
+        android:layout_height="35dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round_button"
         android:backgroundTint="#B6C296"
         android:drawableRight="@drawable/ic_main_button"
@@ -81,7 +82,7 @@
         android:paddingRight="40dp"
         android:text="댕댕이 교육하기"
         android:textColor="#FFFFFF"
-        android:textSize="15sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menu_play" />
@@ -89,10 +90,10 @@
     <Button
         android:id="@+id/menu_bucketlist"
         android:layout_width="250dp"
-        android:layout_height="30dp"
+        android:layout_height="35dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round_button"
         android:backgroundTint="#B6C296"
         android:drawableRight="@drawable/ic_main_button"
@@ -101,7 +102,7 @@
         android:paddingRight="40dp"
         android:text="버킷리스트"
         android:textColor="#FFFFFF"
-        android:textSize="15sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menu_education" />
@@ -109,10 +110,10 @@
     <Button
         android:id="@+id/menu_hospital"
         android:layout_width="250dp"
-        android:layout_height="30dp"
+        android:layout_height="35dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round_button"
         android:backgroundTint="#B6C296"
         android:drawableRight="@drawable/ic_main_button"
@@ -121,7 +122,7 @@
         android:paddingRight="40dp"
         android:text="인근 동물병원"
         android:textColor="#FFFFFF"
-        android:textSize="15sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menu_bucketlist" />
@@ -129,10 +130,10 @@
     <Button
         android:id="@+id/menu_shop"
         android:layout_width="250dp"
-        android:layout_height="30dp"
+        android:layout_height="35dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round_button"
         android:backgroundTint="#B6C296"
         android:drawableRight="@drawable/ic_main_button"
@@ -141,7 +142,7 @@
         android:paddingRight="40dp"
         android:text="인근 애견삽"
         android:textColor="#FFFFFF"
-        android:textSize="15sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menu_hospital" />
@@ -149,19 +150,19 @@
     <Button
         android:id="@+id/menu_community"
         android:layout_width="250dp"
-        android:layout_height="30dp"
+        android:layout_height="35dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round_button"
         android:backgroundTint="#B6C296"
         android:drawableRight="@drawable/ic_main_button"
         android:onClick="onButtonClick"
-        android:paddingLeft="30dp"
+        android:paddingLeft="25dp"
         android:paddingRight="40dp"
         android:text="'강사모' 바로가기"
         android:textColor="#FFFFFF"
-        android:textSize="15sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menu_shop" />
