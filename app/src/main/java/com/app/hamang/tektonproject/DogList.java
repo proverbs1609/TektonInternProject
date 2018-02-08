@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
@@ -40,7 +41,6 @@ public class DogList extends Dialog {
     private String title;
     private View.OnClickListener checkBtListener;
 
-    //private View.OnClickListener xButtonClick ;
     DogListAdapter listAdapter;
     private Button closeBt;
     private TextView dialogTitle;
@@ -49,8 +49,9 @@ public class DogList extends Dialog {
     private RadioButton rb ;
     private RadioButton rb_female ;
     private RadioButton rb_male ;
-    //private TextView xButton ;
     public ListView listView;
+
+    SharedPreferences
     AlertDialog.Builder click ;
     int position ;
     String dogName ;
@@ -155,6 +156,7 @@ public class DogList extends Dialog {
             edit_name.setText(dogName) ;
             if(dogGender=="남아"){
                 rg.check(rb_male.getId());
+
             }
             else if(dogGender=="여아"){
                 rg.check(rb_female.getId()) ;
