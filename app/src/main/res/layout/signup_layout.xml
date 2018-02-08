@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="160dp"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:text="이름"
+            android:textColor="#000000 "
+            android:textSize="15sp" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/findPwDialogNameTi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3.5"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/dialog_edit"
+                android:layout_width="201dp"
+                android:layout_height="40dp"
+                android:textColorHint="#42000000" />
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="289dp"
+        android:layout_height="88dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="171dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:text="성별"
+            android:textColor="#000000 "
+            android:textSize="15sp" />
+
+        <RadioGroup
+            android:id="@+id/signup_genderGroup"
+            android:layout_width="286dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/dialog_rb_male"
+                android:layout_width="wrap_content"
+                android:layout_height="43dp"
+                android:text="남아"
+                android:textColor="#000000 "
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/dialog_rb_female"
+                android:layout_width="wrap_content"
+                android:layout_height="43dp"
+                android:text="여아"
+                android:textColor="#000000 "
+                android:textSize="12sp" />
+        </RadioGroup>
+    </LinearLayout>
+</LinearLayout>
