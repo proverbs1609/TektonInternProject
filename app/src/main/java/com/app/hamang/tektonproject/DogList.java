@@ -29,6 +29,11 @@ import android.widget.Toast;
 
 import com.app.hamang.tektonproject.ActionActivity.ActionMypage;
 import com.app.hamang.tektonproject.EmotionActivity.EmotionMypage;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 
 /**
  * Created by JKPC on 2018-02-06.
@@ -50,8 +55,12 @@ public class DogList extends Dialog {
     private RadioButton rb_female ;
     private RadioButton rb_male ;
     public ListView listView;
+    public SharedPreferences sharedPreferences = MainActivity.sharedPreferences ;
+    public SharedPreferences.Editor editor = MainActivity.editor ;
+    ArrayList<DogItem> animalList = MainActivity.animalList ;
+    public Gson gson = MainActivity.gson ;
+    public String json = MainActivity.json ;
 
-    SharedPreferences
     AlertDialog.Builder click ;
     int position ;
     String dogName ;
@@ -63,6 +72,9 @@ public class DogList extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //loadDate() ;
+        editor = sharedPreferences.edit() ;
+        gson = new Gson() ;
         // 메인 layout
         WindowManager.LayoutParams lpWindow = new WindowManager.LayoutParams();
         lpWindow.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
@@ -108,7 +120,7 @@ public class DogList extends Dialog {
                     public void onClick(DialogInterface dialogInterface, int which) {
                         Object o = listView.getItemAtPosition(xPos) ;
                         DogItem item = (DogItem) o ;
-                        MainActivity.animalList.remove(xPos) ;
+                        animalList.remove(xPos) ;
                         listView.clearChoices();
                         MainActivity.listviewadapter.notifyDataSetChanged();
                     }
@@ -125,22 +137,29 @@ public class DogList extends Dialog {
             }
         });
     }
+
     public DogList(Activity activity, String title, DogListAdapter listAdapter, View.OnClickListener checkBtListener) {
         super(activity, android.R.style.Theme_Translucent_NoTitleBar);
         this.activity = activity;
         this.title = title;
         this.listAdapter = listAdapter;
         this.checkBtListener = checkBtListener;
+        //saveData() ;
+
     }
     public void dialog(String name, String gender, int image){
         mCustomDialog = new MypageMain(getContext(),
                 "[ 나의 댕댕이 ]", name, image, gender, saveListener,
                 closeListener, menu1Listener, menu2Listener, menu3Listener); // 오른쪽 버튼 이벤트
         mCustomDialog.show();
+
     }
     public void edit(String name, String gender, int image){
-        MainActivity.animalList.set(position, new DogItem(name, gender, image, dogSpe, dogSpeNum)) ;
+        animalList.set(position, new DogItem(name, gender, image, dogSpe, dogSpeNum)) ;
         MainActivity.listviewadapter.notifyDataSetChanged();
+        json = gson.toJson(animalList) ;
+        editor.putString("task list", json) ;
+        editor.apply() ;
     }
     private View.OnClickListener saveListener = new View.OnClickListener() {
         @SuppressLint("ResourceType")
@@ -154,13 +173,13 @@ public class DogList extends Dialog {
             rb_female = (RadioButton)dialogView.findViewById((R.id.dialog_rb_female)) ;
             rb_male = (RadioButton)dialogView.findViewById(R.id.dialog_rb_male) ;
             edit_name.setText(dogName) ;
-            if(dogGender=="남아"){
-                rg.check(rb_male.getId());
-
+            if(dogGender.equals("남아")){
+                rg.check(rb_male.getId()) ;
             }
-            else if(dogGender=="여아"){
+            else if(dogGender.equals("여아")){
                 rg.check(rb_female.getId()) ;
             }
+
             final AlertDialog.Builder buider1 = new AlertDialog.Builder(getContext()) ;
             //final AlertDialog.Builder buider1 = new AlertDialog.Builder(new ContextThemeWrapper(getContext(), R.style.CheckDialog));
             buider1.setTitle("[댕댕이]");
@@ -229,4 +248,9 @@ public class DogList extends Dialog {
             activity.startActivity(species); // 종별 특성 페이지 이동과 특수값 전달 해야하는데 데이터베이스를 활용한 문제해결을 해야함.
         }
     };
+    public void saveData(){
+        json = gson.toJson(MainActivity.animalList) ;
+        editor.putString("task list", json) ;
+        editor.apply() ;
+    }
 }

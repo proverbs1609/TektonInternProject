@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TektonInternProject-master.iml" filepath="$PROJECT_DIR$/TektonInternProject-master.iml" />
+      <module fileurl="file://D:\TektonInternProject281\TektonInternProject-master.iml" filepath="D:\TektonInternProject281\TektonInternProject-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TektonInternProject281.iml" filepath="$PROJECT_DIR$/.idea/TektonInternProject281.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
