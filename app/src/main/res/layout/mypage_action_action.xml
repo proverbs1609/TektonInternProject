@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFDDA7">
+    android:background="@color/background">
 
     <Button
         android:id="@+id/action_button1"
@@ -13,10 +13,11 @@
         android:layout_marginStart="31dp"
         android:layout_marginTop="80dp"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:onClick="onButtonClick"
         android:textSize="12dp"
-        android:text="반려인을 잘근잘근 깨문다" />
+        android:text="반려인을 잘근잘근 깨문다"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/action_button2"
@@ -26,10 +27,11 @@
         android:layout_toEndOf="@+id/action_button1"
         android:layout_toRightOf="@+id/action_button1"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:onClick="onButtonClick"
         android:textSize="12dp"
-        android:text="빈 집에서 난장판을 친다" />
+        android:text="빈 집에서 난장판을 친다"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/action_button3"
@@ -40,10 +42,11 @@
         android:layout_below="@+id/action_button1"
         android:layout_marginTop="10dp"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:onClick="onButtonClick"
         android:textSize="12dp"
-        android:text="특정 소리를 무서워한다" />
+        android:text="특정 소리를 무서워한다"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/action_button4"
@@ -54,10 +57,11 @@
         android:layout_below="@+id/action_button2"
         android:layout_marginTop="10dp"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:onClick="onButtonClick"
         android:textSize="12dp"
-        android:text="자주 가출한다" />
+        android:text="자주 가출한다"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/action_button5"
@@ -68,10 +72,11 @@
         android:layout_below="@+id/action_button3"
         android:layout_marginTop="10dp"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:onClick="onButtonClick"
         android:textSize="12dp"
-        android:text="땅파기에 집착한다" />
+        android:text="땅파기에 집착한다"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/action_button6"
@@ -82,9 +87,10 @@
         android:layout_toRightOf="@+id/action_button5"
         android:onClick="onButtonClick"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:textSize="12dp"
-        android:text="@string/str_action_button6" />
+        android:text="@string/str_action_button6"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/action_button7"
@@ -96,9 +102,10 @@
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:textSize="12dp"
-        android:text="반려인에게 달려든다" />
+        android:text="반려인에게 달려든다"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/action_button8"
@@ -110,9 +117,10 @@
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:textSize="12dp"
-        android:text="@string/str_action_button8" />
+        android:text="@string/str_action_button8"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/action_button9"
@@ -124,9 +132,10 @@
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:textSize="12dp"
-        android:text="변을 먹는다" />
+        android:text="변을 먹는다"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/action_button10"
@@ -138,9 +147,10 @@
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:textSize="12dp"
-        android:text="쓰레기통을 뒤진다" />
+        android:text="쓰레기통을 뒤진다"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/action_button11"
@@ -152,9 +162,10 @@
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:textSize="12dp"
-        android:text="목욕하는 것을 싫어한다" />
+        android:text="목욕하는 것을 싫어한다"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/action_button12"
@@ -166,8 +177,9 @@
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:textSize="12dp"
-        android:text="부르면 도망간다" />
+        android:text="부르면 도망간다"
+        android:textColor="#FFFFFF"/>
 
 </RelativeLayout>

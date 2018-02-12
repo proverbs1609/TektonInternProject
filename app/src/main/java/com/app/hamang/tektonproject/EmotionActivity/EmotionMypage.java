@@ -354,14 +354,14 @@ public class EmotionMypage extends AppCompatActivity {
             return fragment;
         }
     }
-        /**
-         * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-         * one of the sections/tabs/pages.
-         */
+    /**
+     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
+     * one of the sections/tabs/pages.
+     */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
         public SectionsPagerAdapter(FragmentManager fm) {
-                super(fm);
-            }
+            super(fm);
+        }
         @Override
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.

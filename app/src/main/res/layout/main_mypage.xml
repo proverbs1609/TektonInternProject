@@ -8,16 +8,16 @@
     <LinearLayout
         android:layout_width="267dp"
         android:layout_height="424dp"
-        android:background="#FFDDA7"
+        android:background="#FFFFFF"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/mypage_title"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
-            android:background="#FBD373"
+            android:background="#5EB2CC"
             android:gravity="center"
-            android:textColor="#006A83"
+            android:textColor="#FFFFFF"
             android:textSize="25sp" />
 
         <TextView
@@ -26,8 +26,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:gravity="center"
-            android:textColor="#8B4513"
-            android:textSize="20sp" />
+            android:textColor="#5EB2CC"
+            android:textSize="17sp" />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -51,7 +51,7 @@
                 android:layout_height="25dp"
                 android:gravity="center"
                 android:layout_gravity="center"
-                android:textColor="#8B4513"
+                android:textColor="#2E323C"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -66,7 +66,7 @@
                 android:id="@+id/mypage_save"
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
-                android:background="#A1BD93"
+                android:background="#5EB2CC"
                 android:gravity="center_horizontal"
                 android:textColor="#FFFFFF"
                 android:textSize="12dp" />
@@ -75,8 +75,8 @@
                 android:id="@+id/mypage_close"
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="55dp"
-                android:background="#A1BD93"
+                android:layout_marginLeft="49dp"
+                android:background="#5EB2CC"
                 android:gravity="center_horizontal"
                 android:onClick="onButtonClick"
                 android:text="x 닫 기"
@@ -96,7 +96,7 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:background="#A1BD93"
+                android:background="#5EB2CC"
                 android:onClick="onButtonClick"
                 android:text="감정 상태"
                 android:textColor="#FFFFFF"
@@ -108,7 +108,7 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:background="#A1BD93"
+                android:background="#5EB2CC"
                 android:onClick="onButtonClick"
                 android:text="문제 행동"
                 android:textColor="#FFFFFF"
@@ -120,7 +120,7 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:background="#A1BD93"
+                android:background="#5EB2CC"
                 android:onClick="onButtonClick"
                 android:text="종별 특징"
                 android:textColor="#FFFFFF"

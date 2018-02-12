@@ -3,7 +3,7 @@
     android:layout_width="250dp"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:background="#D0A727"
+    android:background="@color/colorPrimary"
     android:gravity="center"
     android:orientation="vertical"
     android:weightSum="10">
@@ -29,10 +29,10 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#DCDCDC"
+        android:backgroundTint="#5EB2CC"
         android:text="교육이 필요한 이유"
         android:textSize="15sp"
-        android:textColor="#667572" />
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/necessity_menu2"
@@ -41,20 +41,21 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#DCDCDC"
+        android:backgroundTint="#5EB2CC"
         android:text="교육의 원칙"
         android:textSize="15sp"
-        android:textColor="#667572" />
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/necessity_close"
-        android:background="#D0A727"
+        android:background="@color/colorPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="80dp"
         android:layout_marginBottom="10dp"
         android:text="x"
         android:textSize="25dp"
-        android:textColor="#FFFFFF"/>
+        android:textColor="#fFFFFF"
+        android:textStyle="bold"/>
 
 </LinearLayout>

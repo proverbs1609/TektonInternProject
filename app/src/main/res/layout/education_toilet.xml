@@ -5,7 +5,7 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:weightSum="10"
-    android:background="#D0A727"
+    android:background="@color/colorPrimary"
     android:orientation="vertical">
 
     <TextView
@@ -29,10 +29,10 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint=" #DCDCDC"
+        android:backgroundTint="#5EB2CC"
         android:text="화장실 교육시 유념할 사항"
         android:textSize="15sp"
-        android:textColor="#667572" />
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/toilet_menu2"
@@ -42,10 +42,10 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint=" #DCDCDC"
+        android:backgroundTint="#5EB2CC"
         android:text="기초 화장실 교육"
         android:textSize="15sp"
-        android:textColor="#667572" />
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/toilet_menu3"
@@ -55,10 +55,10 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint=" #DCDCDC"
+        android:backgroundTint="#5EB2CC"
         android:text="화장실 교육시 실패이유"
         android:textSize="15sp"
-        android:textColor="#667572" />
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/toilet_menu4"
@@ -67,20 +67,21 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint=" #DCDCDC"
+        android:backgroundTint="#5EB2CC"
         android:text="영상으로 확인하기"
         android:textSize="15sp"
-        android:textColor="#667572" />
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/toilet_close"
-        android:background="#D0A727"
+        android:background="@color/colorPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="80dp"
         android:layout_marginBottom="10dp"
         android:text="x"
         android:textSize="25dp"
-        android:textColor="#FFFFFF"/>
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
 </LinearLayout>

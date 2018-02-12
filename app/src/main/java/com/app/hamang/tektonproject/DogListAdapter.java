@@ -23,7 +23,6 @@ import static android.provider.Settings.Global.getString;
 
 public class DogListAdapter extends ArrayAdapter<DogItem> {
     ArrayList<DogItem> animalList = new ArrayList<>();
-
     public DogListAdapter(Context context, int textViewResourceId, ArrayList<DogItem> objects) {
         super(context, textViewResourceId, objects);
         animalList = objects;
@@ -36,8 +35,6 @@ public class DogListAdapter extends ArrayAdapter<DogItem> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        //SharedPreferences shardPref =  getSharedPreferences("dogInfo", Context.MODE_PRIVATE);
-        //SharedPreferences.Editor  editor = shardPref.edit() ;
         final int pos = position;
         View v = convertView;
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -48,10 +45,6 @@ public class DogListAdapter extends ArrayAdapter<DogItem> {
         textView.setText(animalList.get(position).getAnimalName());
         textView1.setImageResource(animalList.get(position).getAnimalImage());
         textView2.setText(animalList.get(position).getAnimalGender());
-        //editor.putString("dogName", textView.getText().toString()) ;
-        //editor.putString("dogGender", textView2.getText().toString()) ;
-        //editor.putInt("dogImage", textView1.geti);
-
         return v;
     }
 }

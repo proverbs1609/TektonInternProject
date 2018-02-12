@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">#5EB2CC</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -19,27 +19,16 @@
 
     <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
         <!-- Used for the buttons -->
-        <item name="colorAccent">#FFFFFF</item>
+        <item name="colorAccent">#2E323C</item>
         <!-- Used for the title and text -->
-        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorPrimary">#2E323C</item>
         <!-- Used for the background -->
-        <item name="android:background">#B6C296</item>
-        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:textColor">#2E323C</item>
         <item name="android:textSize">25sp</item>
         <item name="android:textStyle">bold</item>
     </style>
-    <style name="BucketAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <!-- Used for the buttons -->
-        <item name="colorAccent">#FFFFFF</item>
-        <!-- Used for the title and text -->
-        <item name="android:textColorPrimary">#FFFFFF</item>
-        <!-- Used for the background -->
-        <item name="android:background">#B6D0C9</item>
-        <item name="android:textColor">#FFFFFF</item>
-        <item name="android:textSize">25sp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-    <style name="PlaynEduAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+    <style name="WarnningDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
         <!-- Used for the buttons -->
         <item name="colorAccent">#FFFFFF</item>
         <!-- Used for the title and text -->
@@ -47,29 +36,7 @@
         <!-- Used for the background -->
         <item name="android:background">#A1BAD0</item>
         <item name="android:textColor">#FFFFFF</item>
-        <item name="android:textSize">25sp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-    <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <!-- Used for the buttons -->
-        <item name="colorAccent">#A1BAD0</item>
-        <!-- Used for the title and text -->
-        <item name="android:textColorPrimary">#A1BAD0</item>
-        <!-- Used for the background -->
-        <item name="android:background">#FFFFFF</item>
-        <item name="android:textColor">#A1BAD0</item>
         <item name="android:textSize">20sp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-    <style name="CheckDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <!-- Used for the buttons -->
-        <item name="colorAccent">#FFFFFF</item>
-        <!-- Used for the title and text -->
-        <item name="android:textColorPrimary">#FFFFFF</item>
-        <!-- Used for the background -->
-        <item name="android:background">#EB7EA7</item>
-        <item name="android:textColor">#FFFFFF</item>
-        <item name="android:textSize">15sp</item>
         <item name="android:textStyle">bold</item>
     </style>
     <style name="CheckDialog" parent="Theme.AppCompat.Light.Dialog.Alert">

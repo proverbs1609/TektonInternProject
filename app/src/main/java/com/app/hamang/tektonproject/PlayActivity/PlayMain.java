@@ -32,7 +32,7 @@ public class PlayMain extends AppCompatActivity {
         getSupportActionBar().setTitle(null);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        ButtonInfo = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.PlaynEduAlertDialogStyle));
+        ButtonInfo = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.MyAlertDialogStyle));
         ButtonInfo.setNegativeButton("x", null);
     }
     public void onButtonClick(View view) {
@@ -223,7 +223,7 @@ public class PlayMain extends AppCompatActivity {
         return isNetworkConnected;
     }
     private void internetDialog() {
-        android.app.AlertDialog.Builder internetdialog = new android.app.AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AlertDialogStyle));
+        android.app.AlertDialog.Builder internetdialog = new android.app.AlertDialog.Builder(new ContextThemeWrapper(this, R.style.WarnningDialogStyle));
         internetdialog.setNegativeButton("확인",null);
         internetdialog.setTitle("인터넷 없음");
         internetdialog.setMessage("현재 인터넷을 찾을 수 없습니다. WiFi또는 데이터 네트워크를 확인해 주세요.");

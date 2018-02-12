@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFDDA7"
+    android:background="#D4EDF4"
     tools:context="com.app.hamang.tektonproject.PlayActivity.PlayMain">
 
     <android.support.design.widget.AppBarLayout
@@ -46,7 +46,7 @@
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:background="@android:drawable/dialog_holo_light_frame"
-            android:backgroundTint="#B6C296"
+            android:backgroundTint="#5EB2CC"
             android:onClick="onButtonClick"
             android:text="영상"
             android:textColor="#FFFFFF"
@@ -57,7 +57,7 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#667572"
+            android:textColor="#2E323C"
             android:text="본 영상은 youtube를 통해 제공되므로\nWiFi환경에서의 사용을 권장합니다." />
 
         <Button
@@ -66,7 +66,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
             android:background="@android:drawable/dialog_holo_light_frame"
-            android:backgroundTint="#B6C296"
+            android:backgroundTint="#5EB2CC"
             android:onClick="onButtonClick"
             android:text="놀이의 필요성"
             android:textColor="#FFFFFF"
@@ -78,7 +78,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@android:drawable/dialog_holo_light_frame"
-            android:backgroundTint="#B6C296"
+            android:backgroundTint="#5EB2CC"
             android:onClick="onButtonClick"
             android:text="놀이의 기본 규칙"
             android:textColor="#FFFFFF"
@@ -90,7 +90,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@android:drawable/dialog_holo_light_frame"
-            android:backgroundTint="#B6C296"
+            android:backgroundTint="#5EB2CC"
             android:onClick="onButtonClick"
             android:text="장난감"
             android:textColor="#FFFFFF"

@@ -57,11 +57,12 @@ public class DogList extends Dialog {
     public ListView listView;
     public SharedPreferences sharedPreferences = MainActivity.sharedPreferences ;
     public SharedPreferences.Editor editor = MainActivity.editor ;
-    ArrayList<DogItem> animalList = MainActivity.animalList ;
     public Gson gson = MainActivity.gson ;
     public String json = MainActivity.json ;
 
+    ArrayList<DogItem> animalList = MainActivity.animalList ;
     AlertDialog.Builder click ;
+    AlertDialog.Builder check ;
     int position ;
     String dogName ;
     String dogGender ;
@@ -72,7 +73,6 @@ public class DogList extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //loadDate() ;
         editor = sharedPreferences.edit() ;
         gson = new Gson() ;
         // 메인 layout
@@ -81,12 +81,12 @@ public class DogList extends Dialog {
         lpWindow.dimAmount = 0.7f;
         getWindow().setAttributes(lpWindow);
         setContentView(R.layout.dog_list_layout);
-        LayoutInflater inflater1=getLayoutInflater();
-        final View xButtonView = inflater1.inflate(R.layout.dog_list_layout_row, null);
+
+
         closeBt = (Button) findViewById(R.id.listview_bt);
         dialogTitle = (TextView) findViewById(R.id.list_title);
         listView = (ListView) findViewById(R.id.listview);
-        //xButton=(TextView)xButtonView.findViewById(R.id.Xbutton) ;
+
         // 제목 설정
         dialogTitle.setText(title);
         // 리스트뷰 설정
@@ -99,8 +99,6 @@ public class DogList extends Dialog {
                 position = i ;
                 Object o = listView.getItemAtPosition(i);
                 DogItem item = (DogItem)o ;
-                //select(item.animalName) ;
-                Toast.makeText(getContext(), item.animalName, Toast.LENGTH_LONG).show() ;
                 dialog(item.animalName, item.animalGender, item.animalImage);
                 dogName = item.animalName ;
                 dogImage = item.animalImage ;
@@ -113,25 +111,26 @@ public class DogList extends Dialog {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
                 xPos = i ;
-                click = new AlertDialog.Builder(new ContextThemeWrapper(getContext(), R.style.CheckDialogStyle));
+                click = new AlertDialog.Builder(new ContextThemeWrapper(getContext(), R.style.CheckDialog));
                 click.setMessage("삭제하시겠습니까?") ;
                 click.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
+                        check = new AlertDialog.Builder(new ContextThemeWrapper(getContext(), R.style.CheckDialog));
+                        check.setMessage("삭제되었습니다.");
+                        check.setNegativeButton("확인",null);
                         Object o = listView.getItemAtPosition(xPos) ;
                         DogItem item = (DogItem) o ;
                         animalList.remove(xPos) ;
                         listView.clearChoices();
                         MainActivity.listviewadapter.notifyDataSetChanged();
+                        json = gson.toJson(animalList) ;
+                        editor.putString("task list", json) ;
+                        editor.apply() ;
+                        check.show();
                     }
                 }) ;
-                click.setNegativeButton("취소", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // TODO Auto-generated method stub
-                        Toast.makeText(getContext(), "취소", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                click.setNegativeButton("취소", null);
                 click.show() ;
                 return false;
             }
@@ -144,7 +143,6 @@ public class DogList extends Dialog {
         this.title = title;
         this.listAdapter = listAdapter;
         this.checkBtListener = checkBtListener;
-        //saveData() ;
 
     }
     public void dialog(String name, String gender, int image){
@@ -165,7 +163,6 @@ public class DogList extends Dialog {
         @SuppressLint("ResourceType")
         public void onClick(View v) {
             mCustomDialog.dismiss() ;
-            Toast.makeText(getContext(), "등록", Toast.LENGTH_SHORT).show();
             LayoutInflater inflater = getLayoutInflater();
             final View dialogView = inflater.inflate(R.layout.sign_up_layout, null);
             edit_name = (EditText) dialogView.findViewById(R.id.dialog_edit);
@@ -173,45 +170,34 @@ public class DogList extends Dialog {
             rb_female = (RadioButton)dialogView.findViewById((R.id.dialog_rb_female)) ;
             rb_male = (RadioButton)dialogView.findViewById(R.id.dialog_rb_male) ;
             edit_name.setText(dogName) ;
-            if(dogGender.equals("남아")){
-                rg.check(rb_male.getId()) ;
-            }
-            else if(dogGender.equals("여아")){
-                rg.check(rb_female.getId()) ;
-            }
 
-            final AlertDialog.Builder buider1 = new AlertDialog.Builder(getContext()) ;
-            //final AlertDialog.Builder buider1 = new AlertDialog.Builder(new ContextThemeWrapper(getContext(), R.style.CheckDialog));
-            buider1.setTitle("[댕댕이]");
-            buider1.setView(dialogView);
-            buider1.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            if(dogGender.equals("남아")){ rg.check(rb_male.getId()) ; }
+            else if(dogGender.equals("여아")){ rg.check(rb_female.getId()) ; }
+
+            final AlertDialog.Builder builder1 = new AlertDialog.Builder(getContext()) ;
+            builder1.setTitle("[댕댕이]");
+            builder1.setView(dialogView);
+
+            builder1.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
+                    AlertDialog.Builder check = new AlertDialog.Builder(getContext(), R.style.CheckDialog);
+                    check.setMessage("수정되었습니다.");
+                    check.setNegativeButton("확인",null);
                     // TODO Auto-generated method stub
-                    //edit_name.setHint(editName);
+                    String s = dogName ;
                     dogName = edit_name.getText().toString();
                     int id = rg.getCheckedRadioButtonId() ;
                     rb = (RadioButton) dialogView.findViewById(id) ;
-                    if(id==-1){
-                        dogGender = "" ;
-                    }
-                    else{
-                        dogGender = rb.getText().toString() ;
-                    }
+                    if(dogName.equals("")) dogName = s ;
+                    if(id==-1) dogGender = "" ;
+                    else dogGender = rb.getText().toString() ;
                     edit(dogName, dogGender, dogImage) ;
-                    //setDialog(dogName, dogGender, dogImage) ;
+                    check.show() ;
                 }
             });
-            buider1.setNegativeButton("취소", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    // TODO Auto-generated method stub
-                    Toast.makeText(getContext(), "취소", Toast.LENGTH_SHORT).show();
-                }
-            });
-            AlertDialog dialog=buider1.create();
-            dialog.setCanceledOnTouchOutside(false);//없어지지 않도록 설정
-            dialog.show();
+            builder1.setNegativeButton("취소", null) ;
+            builder1.show() ;
         }
     };
     public void setDialog(String setName, String setGender, int setImage){
@@ -248,9 +234,4 @@ public class DogList extends Dialog {
             activity.startActivity(species); // 종별 특성 페이지 이동과 특수값 전달 해야하는데 데이터베이스를 활용한 문제해결을 해야함.
         }
     };
-    public void saveData(){
-        json = gson.toJson(MainActivity.animalList) ;
-        editor.putString("task list", json) ;
-        editor.apply() ;
-    }
 }

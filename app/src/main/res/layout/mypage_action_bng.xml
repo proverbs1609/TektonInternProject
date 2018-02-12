@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFDDA7">
+    android:background="@color/background">
 
     <Button
         android:id="@+id/bng_button1"
@@ -16,9 +16,10 @@
         android:layout_marginTop="80dp"
         android:onClick="onButtonClick"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:textSize="12dp"
-        android:text="계속 운다" />
+        android:text="계속 운다"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/bng_button2"
@@ -29,9 +30,10 @@
         android:layout_toRightOf="@+id/bng_button1"
         android:onClick="onButtonClick"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:textSize="12dp"
-        android:text="너무 자주 짖거나 운다" />
+        android:text="너무 자주 짖거나 운다"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/bng_button3"
@@ -43,9 +45,10 @@
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:textSize="12dp"
-        android:text="@string/str_bng_button3" />
+        android:text="@string/str_bng_button3"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/bng_button4"
@@ -57,9 +60,10 @@
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:textSize="12dp"
-        android:text="산책 시 계속 짖는다" />
+        android:text="산책 시 계속 짖는다"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/bng_button5"
@@ -71,9 +75,10 @@
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:textSize="12dp"
-        android:text="특정 소리에 심하게 짖는다" />
+        android:text="특정 소리에 심하게 짖는다"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/bng_button6"
@@ -85,9 +90,10 @@
         android:layout_toRightOf="@+id/bng_button5"
         android:onClick="onButtonClick"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:textSize="12dp"
-        android:text="낯선 사람에게 계속 짖는다" />
+        android:text="낯선 사람에게 계속 짖는다"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/bng_button7"
@@ -99,9 +105,10 @@
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:textSize="12dp"
-        android:text="낯선 개에게 계속 짖는다" />
+        android:text="낯선 개에게 계속 짖는다"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/bng_button8"
@@ -113,8 +120,9 @@
         android:layout_marginTop="10dp"
         android:onClick="onButtonClick"
         android:background="@android:drawable/dialog_holo_light_frame"
-        android:backgroundTint="#EFEBD9"
+        android:backgroundTint="#5EB2CC"
         android:textSize="12dp"
-        android:text="@string/str_bng_button8" />
+        android:text="@string/str_bng_button8"
+        android:textColor="#FFFFFF"/>
 
 </RelativeLayout>

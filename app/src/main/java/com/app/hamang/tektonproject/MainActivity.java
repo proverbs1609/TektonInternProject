@@ -48,9 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText edit_name ;
     private RadioGroup rg ;
     private RadioButton rb ;
-    int dogImage;
-    String dogName, dogSpe, dogSpeNum, QRvalue ;
-    String dogGender = "" ;
+
     Intent dogcommunity = new Intent(Intent.ACTION_VIEW, Uri.parse("http://m.cafe.naver.com/dogpalza.cafe")); // 네이버 카페 연동 선언
     Intent doghospital = new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.map.naver.com/search2/search.nhn?query=%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&sm=hty"));
     Intent dogshop = new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.map.naver.com/search2/search.nhn?query=%EC%95%A0%EA%B2%AC%EC%83%B5&sm=hty"));
@@ -60,12 +58,15 @@ public class MainActivity extends AppCompatActivity {
     public static String json ;
     LocationManager locationManager ;
     public static DogList cumtomdialog;
-    public static ArrayList<DogItem> animalList;
+    public static ArrayList<DogItem> animalList ;
     public static DogListAdapter listviewadapter ;
     public static final int ran[] = {
             R.mipmap.ic_maltese_round, R.mipmap.ic_poodle_round, R.mipmap.ic_welshcorgi_round, R.mipmap.ic_siberianhusky_round, R.mipmap.ic_goldenretriever_round
     };
     String dogname[] = {"말티즈", "푸들", "웰시 코기", "시베리안 허스키", "골든 리트리버"};
+    int dogImage;
+    String dogName, dogSpe, dogSpeNum, QRvalue ;
+    String dogGender = "" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,9 +76,7 @@ public class MainActivity extends AppCompatActivity {
         editor = sharedPreferences.edit();
         gson = new Gson();
         activity = this;
-        loadDate();
-//        LayoutInflater inflater1=getLayoutInflater();
-//        final View view= inflater1.inflate(R.layout.main_mypage, null);
+        loadData();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -142,8 +141,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.menu_hospital: // 병원 찾기 버튼 반응
                 if (isNetworkConnected()) {
-                    if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
-                        location();
+                    if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) location();
                     else {
                         startActivity(doghospital);
                         Toast.makeText(getApplicationContext(), "검색 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_LONG).show();
@@ -152,8 +150,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.menu_shop: // 샵 찾기 버튼 반응
                 if (isNetworkConnected()) {
-                    if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
-                        location();
+                    if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) location();
                     else {
                         startActivity(dogshop);
                         Toast.makeText(getApplicationContext(), "검색 중입니다. 잠시만 기다려주세요.", Toast.LENGTH_LONG).show();
@@ -226,9 +223,13 @@ public class MainActivity extends AppCompatActivity {
             builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
+                    AlertDialog.Builder check = new AlertDialog.Builder(MainActivity.this, R.style.CheckDialog);
+                    check.setMessage("저장되었습니다.");
+                    check.setNegativeButton("확인",null);
                     dogName = edit_name.getText().toString();
                     int id = rg.getCheckedRadioButtonId();
                     rb = (RadioButton) dialogView.findViewById(id);
+                    if(dogName.equals("")) dogName = dogname[Integer.parseInt(QRvalue)] ;
                     if (id == -1) dogGender = "";
                     else dogGender = rb.getText().toString();
                     signup(dogName, dogGender, dogImage);
@@ -236,12 +237,11 @@ public class MainActivity extends AppCompatActivity {
                     json = gson.toJson(animalList);
                     editor.putString("task list", json);
                     editor.apply();
+                    check.show();
                 }
             });
             builder.setNegativeButton("취소", null);
-            AlertDialog dialog = builder.create();
-            dialog.setCanceledOnTouchOutside(false);
-            dialog.show();
+            builder.show() ;
         }
     };
     private View.OnClickListener closeListener = new View.OnClickListener() {
@@ -284,14 +284,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void internetDialog() {
-        AlertDialog.Builder internetdialog = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AlertDialogStyle));
+        AlertDialog.Builder internetdialog = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.WarnningDialogStyle));
         internetdialog.setNegativeButton("확인", null);
         internetdialog.setTitle("인터넷 없음");
         internetdialog.setMessage("현재 인터넷을 찾을 수 없습니다. WiFi또는 데이터 네트워크를 확인해 주세요.");
         internetdialog.show();
     }
 
-    public void loadDate() {
+    public void loadData() {
         json = sharedPreferences.getString("task list", null);
         Type type = new TypeToken<ArrayList<DogItem>>() {
         }.getType();

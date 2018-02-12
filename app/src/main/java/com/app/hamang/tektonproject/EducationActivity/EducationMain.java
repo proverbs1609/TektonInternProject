@@ -33,7 +33,6 @@ public class EducationMain extends AppCompatActivity {
     private MediaPlayer hz5;
 
     AlertDialog.Builder ButtonInfo;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +43,7 @@ public class EducationMain extends AppCompatActivity {
         getSupportActionBar().setTitle(null);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        ButtonInfo = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.PlaynEduAlertDialogStyle));
+        ButtonInfo = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.MyAlertDialogStyle));
         ButtonInfo.setNegativeButton("x", null);
 
         clickersound = MediaPlayer.create(this, R.raw.sound1);
@@ -222,9 +221,13 @@ public class EducationMain extends AppCompatActivity {
     };
     private View.OnClickListener toiletMenu4 = new View.OnClickListener() {
         public void onClick(View v) {
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("https://youtu.be/vRzkMWZ61Vs"));
-            startActivity(intent);
+            if(isNetworkConnected()) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://youtu.be/vRzkMWZ61Vs"));
+                startActivity(intent);
+            } else {
+                internetDialog();
+            }
         }
     };
     private View.OnClickListener kennelClose = new View.OnClickListener() {
@@ -276,9 +279,13 @@ public class EducationMain extends AppCompatActivity {
     };
     private View.OnClickListener kennelMenu4 = new View.OnClickListener() {
         public void onClick(View v) {
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("https://youtu.be/pJbFfrXr-qw"));
-            startActivity(intent);
+            if(isNetworkConnected()) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://youtu.be/pJbFfrXr-qw"));
+                startActivity(intent);
+            } else {
+                internetDialog();
+            }
         }
     };
     private View.OnClickListener soundClose = new View.OnClickListener() {
@@ -363,7 +370,7 @@ public class EducationMain extends AppCompatActivity {
         return isNetworkConnected;
     }
     private void internetDialog() {
-        android.app.AlertDialog.Builder internetdialog = new android.app.AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AlertDialogStyle));
+        android.app.AlertDialog.Builder internetdialog = new android.app.AlertDialog.Builder(new ContextThemeWrapper(this, R.style.WarnningDialogStyle));
         internetdialog.setNegativeButton("확인",null);
         internetdialog.setTitle("인터넷 없음");
         internetdialog.setMessage("현재 인터넷을 찾을 수 없습니다. WiFi또는 데이터 네트워크를 확인해 주세요.");

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="#B6D0C9"
+        android:background="?attr/colorPrimary"
         android:drawableLeft="@drawable/ic_textsms_black_24dp"
         android:drawableStart="@drawable/ic_textsms_black_24dp"
         android:gravity="center"

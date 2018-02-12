@@ -37,7 +37,7 @@ public class VideoPlay extends Dialog {
         //다이얼로그 외부화면 흐리기
         WindowManager.LayoutParams IpWindow = new WindowManager.LayoutParams();
         IpWindow.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-        IpWindow.dimAmount = 0.5f;
+        IpWindow.dimAmount = 0.8f;
         getWindow().setAttributes(IpWindow);
 
         setContentView(R.layout.play_video);
@@ -62,9 +62,9 @@ public class VideoPlay extends Dialog {
 
     // 클릭버튼이 확인과 취소 두개일때 생성자 함수로 이벤트를 받는다
     public VideoPlay(Context context, String title, View.OnClickListener closeListener,
-                          View.OnClickListener menu1Listener, View.OnClickListener menu2Listener,
-                          View.OnClickListener menu3Listener, View.OnClickListener menu4Listener,
-                          View.OnClickListener menu5Listener, View.OnClickListener menu6Listener) {
+                     View.OnClickListener menu1Listener, View.OnClickListener menu2Listener,
+                     View.OnClickListener menu3Listener, View.OnClickListener menu4Listener,
+                     View.OnClickListener menu5Listener, View.OnClickListener menu6Listener) {
         super(context, android.R.style.Theme_Translucent_NoTitleBar);
         this.title = title;
         this.closeClickListener = closeListener;

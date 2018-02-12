@@ -45,7 +45,7 @@ public class BucketMain extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public void textviewClick() {
-        final AlertDialog.Builder bucketdialog = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.BucketAlertDialogStyle));
+        final AlertDialog.Builder bucketdialog = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.MyAlertDialogStyle));
         bucketdialog.setNegativeButton("x", null);
         TextView.OnClickListener onClickListener = new TextView.OnClickListener() {
             @Override

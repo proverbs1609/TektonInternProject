@@ -43,7 +43,7 @@
 
         <RelativeLayout
             android:id="@+id/specise_view"
-            android:background="#FFDDA7"
+            android:background="#D4EDF4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_column="0"
                     android:layout_row="1"
-                    android:background="#FFDDA7"
+                    android:background="#D4EDF4"
                     android:orientation="vertical">
 
                     <ListView
@@ -74,7 +74,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:layout_marginBottom="10dp"
-                        android:background="#FFDDA7"
+                        android:background="#D4EDF4"
                         android:divider="@color/zxing_status_text"
                         android:dividerHeight="10dp" />
 

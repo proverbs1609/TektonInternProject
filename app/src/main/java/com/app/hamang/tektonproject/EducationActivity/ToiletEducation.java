@@ -33,7 +33,7 @@ public class ToiletEducation extends Dialog {
         //다이얼로그 외부화면 흐리기
         WindowManager.LayoutParams IpWindow = new WindowManager.LayoutParams();
         IpWindow.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-        IpWindow.dimAmount = 0.5f;
+        IpWindow.dimAmount = 0.8f;
         getWindow().setAttributes(IpWindow);
 
         setContentView(R.layout.education_toilet);

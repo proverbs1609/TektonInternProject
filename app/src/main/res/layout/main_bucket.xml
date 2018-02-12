@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
-    android:background="#FFDDA7">
+    android:background="@color/background">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -60,6 +60,7 @@
                     android:gravity="center"
                     android:text="반려동물과 함께한\n모든 이야기를 체크하세요."
                     android:textSize="18dp"
+                    android:textColor="#2E323C"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     tools:layout_editor_absoluteY="91dp" />
@@ -72,6 +73,7 @@
                     android:gravity="center"
                     android:text="목록의 글자를 클릭하면\n자세한 설명을 확인할 수 있습니다."
                     android:textSize="8dp"
+                    android:textColor="#2E323C"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     tools:layout_editor_absoluteY="117dp" />
@@ -88,6 +90,7 @@
                         android:layout_marginLeft="30dp"
                         android:layout_weight="1"
                         android:text="가족사진 찍기"
+                        android:textColor="#2E323C"
                         android:textSize="15dp" />
 
                     <Switch
@@ -112,6 +115,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="30dp"
                         android:text="짝꿍샷 찍기"
+                        android:textColor="#2E323C"
                         android:textSize="15dp" />
 
                     <Switch
@@ -136,6 +140,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="30dp"
                         android:text="뚱견 탈출하기"
+                        android:textColor="#2E323C"
                         android:textSize="15dp" />
 
                     <Switch
@@ -160,6 +165,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="30dp"
                         android:text="반려동물 등록증 만들기"
+                        android:textColor="#2E323C"
                         android:textSize="15dp" />
                     <Switch
                         android:id="@+id/bucketswitch4"
@@ -183,6 +189,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="30dp"
                         android:textSize="15dp"
+                        android:textColor="#2E323C"
                         android:text="물놀이 함께하기" />
                     <Switch
                         android:id="@+id/bucketswitch5"
@@ -206,6 +213,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="30dp"
                         android:textSize="15dp"
+                        android:textColor="#2E323C"
                         android:text="러브 하우스" />
                     <Switch
                         android:id="@+id/bucketswitch6"
@@ -229,6 +237,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="30dp"
                         android:textSize="15dp"
+                        android:textColor="#2E323C"
                         android:text="개생샷 찍기" />
                     <Switch
                         android:id="@+id/bucketswitch7"
@@ -251,6 +260,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:layout_weight="1"
+                        android:textColor="#2E323C"
                         android:textSize="15dp"
                         android:text="건강검진하기" />
                     <Switch
@@ -275,6 +285,7 @@
                         android:layout_marginLeft="30dp"
                         android:layout_weight="1"
                         android:textSize="15dp"
+                        android:textColor="#2E323C"
                         android:text="친구 만들기" />
                     <Switch
                         android:id="@+id/bucketswitch9"
@@ -298,6 +309,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="30dp"
                         android:textSize="15dp"
+                        android:textColor="#2E323C"
                         android:text="반려견 전용 캠핑장 가기" />
                     <Switch
                         android:id="@+id/bucketswitch10"
@@ -321,6 +333,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="30dp"
                         android:textSize="15dp"
+                        android:textColor="#2E323C"
                         android:text="동네 산책하기" />
                     <Switch
                         android:id="@+id/bucketswitch11"
@@ -344,6 +357,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="30dp"
                         android:textSize="15dp"
+                        android:textColor="#2E323C"
                         android:text="만약을 위해 전신사진 찍기" />
                     <Switch
                         android:id="@+id/bucketswitch12"
@@ -367,6 +381,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="30dp"
                         android:textSize="15dp"
+                        android:textColor="#2E323C"
                         android:text="댕댕이 적금통장 만들기" />
                     <Switch
                         android:id="@+id/bucketswitch13"
@@ -390,6 +405,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="30dp"
                         android:textSize="15dp"
+                        android:textColor="#2E323C"
                         android:text="펫카페 놀러 가기" />
                     <Switch
                         android:id="@+id/bucketswitch14"
@@ -413,6 +429,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="30dp"
                         android:textSize="15dp"
+                        android:textColor="#2E323C"
                         android:text="발도장 액자 만들기" />
                     <Switch
                         android:id="@+id/bucketswitch15"
@@ -436,6 +453,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="30dp"
                         android:textSize="15dp"
+                        android:textColor="#2E323C"
                         android:text="반려견 전용 운동장 가기" />
                     <Switch
                         android:id="@+id/bucketswitch16"
@@ -459,6 +477,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="30dp"
                         android:textSize="15dp"
+                        android:textColor="#2E323C"
                         android:text="함께 여행가기" />
                     <Switch
                         android:id="@+id/bucketswitch17"
@@ -482,6 +501,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="30dp"
                         android:textSize="15dp"
+                        android:textColor="#2E323C"
                         android:text="패셔니스타 도전하기" />
                     <Switch
                         android:id="@+id/bucketswitch18"
@@ -505,6 +525,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="30dp"
                         android:textSize="15dp"
+                        android:textColor="#2E323C"
                         android:text="이름표 달기" />
                     <Switch
                         android:id="@+id/bucketswitch19"
@@ -529,6 +550,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="30dp"
                         android:textSize="15dp"
+                        android:textColor="#2E323C"
                         android:text="특별식 만들어주기" />
                     <Switch
                         android:id="@+id/bucketswitch20"

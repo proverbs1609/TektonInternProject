@@ -39,7 +39,7 @@ public class MypageMain extends Dialog {
         // 다이얼로그 외부 화면 흐리게 표현
         WindowManager.LayoutParams lpWindow = new WindowManager.LayoutParams();
         lpWindow.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-        lpWindow.dimAmount = 0.5f;
+        lpWindow.dimAmount = 0.8f;
         getWindow().setAttributes(lpWindow);
         setContentView(R.layout.main_mypage);
         // 마이페이지 버튼설정과 클릭 리스너

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C2DFEA"
+    android:background="#D4EDF4"
     tools:context="com.app.hamang.tektonproject.InfoActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -17,8 +17,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#B6D0C9"
-
+            android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
             <TextView
@@ -58,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="공지 사항"
-                android:textColor="#8C95AA"
+                android:textColor="#2E323C"
                 android:textSize="15sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -76,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:background="#C2DFEA"
+                android:background="#D4EDF4"
                 android:divider="#CFDEE7"
                 android:dividerHeight="10dp" />
 
@@ -95,7 +94,7 @@
                 android:layout_marginTop="5dp"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="#8C95AA"
+                android:textColor="#2E323C"
                 android:gravity="center"
                 android:text="온라인 애견용품" />
 
