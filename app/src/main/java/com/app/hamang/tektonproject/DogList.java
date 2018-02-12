@@ -200,12 +200,6 @@ public class DogList extends Dialog {
             builder1.show() ;
         }
     };
-    public void setDialog(String setName, String setGender, int setImage){
-        newDialog = new MypageMain(getContext(),
-                "[ 나의 댕댕이 ]", setName, setImage, setGender, saveListener,
-                mCloseListener, menu1Listener, menu2Listener, menu3Listener); // 오른쪽 버튼 이벤트
-        newDialog.show();
-    }
     private View.OnClickListener closeListener = new View.OnClickListener() {
         public void onClick(View v) {
             mCustomDialog.dismiss() ;
